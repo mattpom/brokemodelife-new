@@ -892,7 +892,7 @@ footer {
 <div class="page-hero fade-up">
   <p class="eyebrow">Budget Health & Wellness</p>
   <h1>🍎 Apple a Day</h1>
-  <p>Stay healthy without a gym membership or a nutritionist. Real wellness on a broke budget.</p>
+  <p>Stay healthy without the gym membership. Free workouts, budget nutrition, and wellness hacks for real people.</p>
 </div>
 
 <div class="marquee-wrap">
@@ -941,6 +941,31 @@ footer {
       <div class="product-desc">Best cardio per dollar on the market. 15 minutes beats most gym sessions.</div>
       <div class="product-link">View on Amazon →</div>
     </a>
+  
+    <a class="product-card" href="https://www.amazon.com/s?k=vitamin+d3+k2+supplement&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">Under $15</div>
+      <div class="product-name">Vitamin D3 + K2 Supplement</div>
+      <div class="product-desc">The combo most people are deficient in. Energy, immunity, and bone health in one affordable bottle.</div>
+      <span class="product-link">Shop Amazon →</span>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=magnesium+glycinate+supplement&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">Under $20</div>
+      <div class="product-name">Magnesium Glycinate</div>
+      <div class="product-desc">Better sleep, less stress. One of the best budget health investments available.</div>
+      <span class="product-link">Shop Amazon →</span>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=workout+log+fitness+journal&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">Under $10</div>
+      <div class="product-name">Fitness Notebook Workout Log</div>
+      <div class="product-desc">Track your progress. People who log workouts see dramatically better results.</div>
+      <span class="product-link">Shop Amazon →</span>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=massage+ball+deep+tissue&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">Under $12</div>
+      <div class="product-name">Massage Ball Deep Tissue</div>
+      <div class="product-desc">Self-massage for tight muscles. Works like a foam roller for specific pressure points.</div>
+      <span class="product-link">Shop Amazon →</span>
+    </a>
   </div>
   <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
 </div>
@@ -948,10 +973,20 @@ footer {
 <div style="margin-bottom:3rem">
   <p class="section-label">Related Guides</p>
   <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
-  <div class="card-grid">
+  <div class="card-grid" style="grid-template-columns:repeat(3,1fr)!important;">
     <a class="card" href="budget_beauty.html">
       <div class="card-title">💅 Budget Beauty</div>
-      <div class="card-body">Look good without going broke</div>
+      <div class="card-body">Look good without spending big. Dupes, samples, and skincare hacks that actually work.</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+    <a class="card" href="freestuff.html">
+      <div class="card-title">🎁 Free Stuff</div>
+      <div class="card-body">Free health samples, trial supplements, and wellness products at zero cost.</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+    <a class="card" href="go_out_and_play.html">
+      <div class="card-title">🎯 Go Out & Play</div>
+      <div class="card-body">Free outdoor activities and fitness that cost nothing but your time.</div>
       <span class="card-tag">Explore →</span>
     </a>
   </div>
@@ -959,25 +994,32 @@ footer {
 
 </div>
 
-<section class="email-strip">
-  <h2>Stay in the Loop</h2>
-  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
-  <form class="email-form" onsubmit="handleEmail(event)">
-    <input type="email" placeholder="your@email.com" required>
+<section class="email-strip" id="email-section">
+  <h2>Join the Broke Mode List</h2>
+  <p>Updates, tools, and deals — straight to your inbox. No spam. Ever.</p>
+  <form class="email-form" action="https://formspree.io/f/mdawqpkv" method="POST" onsubmit="handleEmail(event)">
+    <input type="email" name="email" placeholder="your@email.com" required>
     <button type="submit">Subscribe</button>
   </form>
   <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
 </section>
 
 <footer>
-  <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
+  <div>
+    <div class="footer-brand">Broke Mode Life</div>
+    <div class="footer-tagline">Live Large on a Lean Budget</div>
+  </div>
   <div class="footer-links">
-    <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
-    <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
-    <a href="https://x.com/brokemodelife00" target="_blank" rel="noopener">𝕏 @BrokeModLife</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="affiliate.html">Affiliate</a>
+    <a href="contact.html">Contact</a>
+    <a href="cookie.html">Cookies</a>
+    <a href="https://x.com/brokemodelife00" target="_blank" rel="noopener">𝕏 Follow Us</a>
     <a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a>
   </div>
-  <p class="footer-copy">© Broke Mode Life 2025 — All Rights Reserved</p>
+  <p class="footer-copy">© Broke Mode Life 2025 — Mattpom Digital Ventures LLC. All Rights Reserved. 
+  <a href="affiliate.html" style="color:#444">Affiliate Disclosure</a> — Some links earn commission at no cost to you.</p>
 </footer>
 
 <script>

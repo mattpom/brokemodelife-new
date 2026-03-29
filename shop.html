@@ -895,7 +895,8 @@ footer {
     <li><a href="style.html">Style</a></li>
     <li><a href="travel.html">Travel</a></li>
     <li><a href="freestuff.html">Free Stuff</a></li>
-    <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
   </ul>
@@ -905,7 +906,7 @@ footer {
 <div class="page-hero fade-up">
   <p class="eyebrow">Broke-Mode Vetted Picks</p>
   <h1>📦 Shop</h1>
-  <p>Everything here passed the Broke Mode test: Does it work? Is it worth it? Would we buy it ourselves? If yes — it's here.</p>
+  <p>Every product here passed one test: does it work, is it worth it, would we buy it ourselves?</p>
 </div>
 
 <div class="marquee-wrap">
@@ -1047,25 +1048,32 @@ footer {
 
 </div>
 
-<section class="email-strip">
-  <h2>Stay in the Loop</h2>
-  <p>New picks, deals, and broke-mode finds — straight to your inbox.</p>
-  <form class="email-form" onsubmit="handleEmail(event)">
-    <input type="email" placeholder="your@email.com" required>
+<section class="email-strip" id="email-section">
+  <h2>Join the Broke Mode List</h2>
+  <p>Updates, tools, and deals — straight to your inbox. No spam. Ever.</p>
+  <form class="email-form" action="https://formspree.io/f/mdawqpkv" method="POST" onsubmit="handleEmail(event)">
+    <input type="email" name="email" placeholder="your@email.com" required>
     <button type="submit">Subscribe</button>
   </form>
   <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
 </section>
 
 <footer>
-  <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
+  <div>
+    <div class="footer-brand">Broke Mode Life</div>
+    <div class="footer-tagline">Live Large on a Lean Budget</div>
+  </div>
   <div class="footer-links">
-    <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
-    <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
-    <a href="https://x.com/brokemodelife00" target="_blank" rel="noopener">𝕏 @BrokeModLife</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="affiliate.html">Affiliate</a>
+    <a href="contact.html">Contact</a>
+    <a href="cookie.html">Cookies</a>
+    <a href="https://x.com/brokemodelife00" target="_blank" rel="noopener">𝕏 Follow Us</a>
     <a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a>
   </div>
-  <p class="footer-copy">© Broke Mode Life 2025 — All Rights Reserved</p>
+  <p class="footer-copy">© Broke Mode Life 2025 — Mattpom Digital Ventures LLC. All Rights Reserved. 
+  <a href="affiliate.html" style="color:#444">Affiliate Disclosure</a> — Some links earn commission at no cost to you.</p>
 </footer>
 
 <script>
