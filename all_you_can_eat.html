@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All You Can Eat — Broke Mode Life</title>
+  <!-- Canonical -->
+  <link rel="canonical" href="https://brokemodelife.com/all_you_can_eat.html">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><text y='.9em' font-size='90' fill='%23c8f135'>💰</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><text y='.9em' font-size='90' fill='%23c8f135'>💰</text></svg>">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brokemodelife.com/all_you_can_eat.html">
+  <meta property="og:title" content="All You Can Eat — Budget Food & Recipes | Broke Mode Life">
+  <meta property="og:description" content="Eat like royalty on a budget. Cheap meal ideas, grocery hacks, and batch cooking strategies that actually work.">
+  <meta property="og:site_name" content="Broke Mode Life">
+  <meta property="og:image" content="https://brokemodelife.com/og-image.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@brokemodelife00">
+  <meta name="twitter:title" content="All You Can Eat — Budget Food & Recipes | Broke Mode Life">
+  <meta name="twitter:description" content="Eat like royalty on a budget. Cheap meal ideas, grocery hacks, and batch cooking strategies that actually work.">
+  <meta name="twitter:image" content="https://brokemodelife.com/og-image.png">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "name": "All You Can Eat — Budget Food & Recipes | Broke Mode Life",
+    "description": "Eat like royalty on a budget. Cheap meal ideas, grocery hacks, and batch cooking strategies that actually work.",
+    "url": "https://brokemodelife.com/all_you_can_eat.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Broke Mode Life",
+      "url": "https://brokemodelife.com"
+    }
+  }
+  </script>
+<meta name="description" content="Eat like royalty on a peasant budget. Recipes, meal hacks, and grocery strategies that actually work.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BROKE MODE LIFE — Global Stylesheet
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:    #0a0a0a;
+  --off-black:#111111;
+  --dark:     #1a1a1a;
+  --lime:     #c8f135;
+  --lime-dim: #a8ce1e;
+  --white:    #f5f5f0;
+  --muted:    #888;
+  --card-bg:  #161616;
+  --border:   #2a2a2a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--lime);
+  text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.8rem;
+  list-style: none;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--lime); }
+
+.nav-cta {
+  background: var(--lime) !important;
+  color: var(--black) !important;
+  padding: 0.35rem 1rem !important;
+  border-radius: 2px;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--lime-dim) !important; }
+
+/* HAMBURGER */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.25s;
+}
+
+/* PAGE HERO */
+.page-hero {
+  padding: 8rem 2.5rem 4rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200,241,53,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero .eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.page-hero .eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--lime);
+}
+
+.page-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.page-hero p {
+  font-size: 1.05rem;
+  color: #aaa;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* MARQUEE */
+.marquee-wrap {
+  background: var(--lime);
+  overflow: hidden;
+  padding: 0.65rem 0;
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 22s linear infinite;
+}
+.marquee-track span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--black);
+  padding: 0 1.8rem;
+}
+.marquee-track span.sep { color: rgba(0,0,0,0.3); padding: 0; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+/* SECTION LABELS */
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-body {
+  font-size: 1rem;
+  color: #aaa;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card:hover { background: #1c1c1c; }
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.card:hover::after { transform: scaleX(1); }
+
+.card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+
+.card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  font-size: 0.9rem;
+  color: #999;
+  line-height: 1.6;
+}
+
+.card-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lime);
+  border: 1px solid var(--lime);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+/* AI CONTENT BLOCK */
+.ai-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.ai-block .ai-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lime);
+  border: 1px solid rgba(200,241,53,0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.ai-block h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.ai-block p, .ai-block li {
+  font-size: 0.95rem;
+  color: #bbb;
+  line-height: 1.75;
+  margin-bottom: 0.6rem;
+}
+
+.ai-block ul, .ai-block ol {
+  padding-left: 1.4rem;
+}
+
+.ai-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2rem 0;
+}
+
+.ai-loading::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-top-color: var(--lime);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* REFRESH BUTTON */
+.btn-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--lime);
+  border: 1px solid var(--lime);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 1.5rem;
+}
+.btn-refresh:hover { background: var(--lime); color: var(--black); }
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--lime);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--lime-dim); transform: translateY(-1px); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--lime); color: var(--lime); }
+
+/* AFFILIATE PRODUCT CARD */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.product-card:hover { border-color: var(--lime); transform: translateY(-2px); }
+
+.product-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--lime);
+}
+
+.product-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.product-desc {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.product-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-top: 0.5rem;
+}
+
+/* BLOG FEED */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.blog-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: background 0.2s;
+}
+.blog-card:hover { background: #1c1c1c; }
+
+.blog-source {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+
+.blog-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.blog-desc {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.blog-date {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 0.4rem;
+}
+
+/* EMAIL STRIP */
+.email-strip {
+  background: var(--lime);
+  padding: 4rem 2.5rem;
+  text-align: center;
+}
+
+.email-strip h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.email-strip p {
+  color: rgba(0,0,0,0.6);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.email-form {
+  display: flex;
+  gap: 0;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.email-form input {
+  flex: 1;
+  background: var(--black);
+  color: var(--white);
+  border: 2px solid var(--black);
+  padding: 0.85rem 1.2rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  border-radius: 2px 0 0 2px;
+  outline: none;
+}
+.email-form input::placeholder { color: #555; }
+.email-form button {
+  background: var(--black);
+  color: var(--lime);
+  border: 2px solid var(--black);
+  padding: 0.85rem 1.6rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+  transition: background 0.2s;
+}
+.email-form button:hover { background: #181818; }
+.email-note {
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  color: rgba(0,0,0,0.4);
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* FOOTER */
+footer {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  color: var(--lime);
+  letter-spacing: 0.05em;
+}
+.footer-tagline {
+  font-size: 0.75rem;
+  color: #444;
+  margin-top: 0.2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.footer-links {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--lime); }
+.footer-copy {
+  font-size: 0.75rem;
+  color: #2a2a2a;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.06em;
+  width: 100%;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease both; }
+.fade-up-2 { animation: fadeUp 0.6s 0.1s ease both; }
+.fade-up-3 { animation: fadeUp 0.6s 0.2s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: rgba(10,10,10,0.98);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+    z-index: 300;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .nav-links.open li {
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open a {
+    display: block;
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+    color: var(--white);
+    width: 100%;
+  }
+  .nav-links.open a:hover { color: var(--lime); }
+  .nav-links.open .nav-cta {
+    margin-top: 0.5rem;
+    display: block;
+    text-align: center;
+    padding: 0.8rem !important;
+    width: 100%;
+    border-radius: 2px;
+  }
+  .nav-toggle { display: flex; }
+  .page-hero { padding: 6rem 1.5rem 3rem; }
+  .main-content { padding: 2.5rem 1.5rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .email-form { flex-direction: column; }
+  .email-form input,
+  .email-form button { border-radius: 2px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Responsive grid fixes */
+@media (max-width: 1100px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .cat-grid { grid-template-columns: repeat(5, 1fr) !important; }
+}
+@media (max-width: 700px) {
+  .card-grid { grid-template-columns: 1fr !important; }
+  .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .blog-grid { grid-template-columns: 1fr !important; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+</style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-486684955');
+  </script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BML</a>
+  <ul class="nav-links">
+    <li><a href="all_you_can_eat.html">Food</a></li>
+    <li><a href="apple_a_day.html">Health</a></li>
+    <li><a href="go_out_and_play.html">Fun</a></li>
+    <li><a href="style.html">Style</a></li>
+    <li><a href="travel.html">Travel</a></li>
+    <li><a href="freestuff.html">Free Stuff</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero fade-up">
+  <p class="eyebrow">Budget Food & Recipes</p>
+  <h1>🍽️ All You Can Eat</h1>
+  <p>Eat like royalty on a peasant budget. Recipes, meal hacks, and grocery strategies that actually work.</p>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Cheap Eats</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Budget Recipes</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span><span>Batch Cooking</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Freezer Meals</span><span class="sep">·</span><span>$5 Dinners</span><span class="sep">·</span><span>Pantry First</span><span class="sep">·</span>
+    <span>Cheap Eats</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Budget Recipes</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span><span>Batch Cooking</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Freezer Meals</span><span class="sep">·</span><span>$5 Dinners</span><span class="sep">·</span><span>Pantry First</span><span class="sep">·</span>
+  </div>
+</div>
+
+<div class="main-content">
+
+  <div style="margin-bottom:2rem">
+    <p class="section-label">AI-Powered — Updates Every Visit</p>
+    <h2 class="section-title">Budget Meal Planning & Cheap Eats</h2>
+    <button class="btn-refresh" onclick="refreshallyoucaneat()">↻ Refresh Content</button>
+    <div id="allyoucaneat-ai"></div>
+  </div>
+
+  
+  
+<div style="margin-bottom:3rem">
+  <p class="section-label">Broke Mode Picks</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=instant+pot+duo&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$89</div>
+      <div class="product-name">Instant Pot Duo 7-in-1</div>
+      <div class="product-desc">The broke-mode kitchen MVP. Replaces 7 appliances and makes cheap cuts of meat taste expensive.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=cast+iron+skillet&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$25</div>
+      <div class="product-name">Cast Iron Skillet</div>
+      <div class="product-desc">Lasts forever, cooks everything, costs $25. The single best kitchen investment you'll make.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=meal+prep+containers&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$18</div>
+      <div class="product-name">Meal Prep Containers (20-pack)</div>
+      <div class="product-desc">Batch cook once, eat all week. No more wasted food or last-minute takeout decisions.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=immersion+blender&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$30</div>
+      <div class="product-name">Immersion Blender</div>
+      <div class="product-desc">Soups, smoothies, sauces — blended in the pot. Saves dishes and tastes like you tried.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+  </div>
+  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+</div>
+
+<div style="margin-bottom:3rem">
+  <p class="section-label">Related Guides</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
+  <div class="card-grid">
+    <a class="card" href="quick_meals.html">
+      <div class="card-title">⚡ Quick Meals</div>
+      <div class="card-body">Fast, cheap, tasty eats under 30 minutes</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+
+    <a class="card" href="coupon_stack.html">
+      <div class="card-title">💸 Coupon Stack</div>
+      <div class="card-body">Master the art of stacking deals</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+  </div>
+</div>
+
+</div>
+
+<section class="email-strip">
+  <h2>Stay in the Loop</h2>
+  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
+  <form class="email-form" onsubmit="handleEmail(event)">
+    <input type="email" placeholder="your@email.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
+</section>
+
+<footer>
+  <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
+  <div class="footer-links">
+    <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
+    <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
+    <a href="https://x.com/brokemodelife00" target="_blank" rel="noopener">𝕏 @BrokeModLife</a>
+    <a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a>
+  </div>
+  <p class="footer-copy">© Broke Mode Life 2025 — All Rights Reserved</p>
+</footer>
+
+<script>
+/* ============================================================
+   BROKE MODE LIFE — Global JavaScript
+   ============================================================ */
+
+// ── NAV TOGGLE ──────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    // Close menu when any link is clicked
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => links.classList.remove('open'));
+    });
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !links.contains(e.target)) {
+        links.classList.remove('open');
+      }
+    });
+  }
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === path) a.classList.add('active');
+  });
+});
+
+// ── EMAIL FORM ───────────────────────────────────────────────
+function handleEmail(e) {
+  e.preventDefault();
+  const status = document.getElementById('form-status');
+  if (status) status.textContent = "✓ You're in. Welcome to Broke Mode.";
+  e.target.reset();
+}
+
+// ── CONTENT BANKS ────────────────────────────────────────────
+const CONTENT_BANKS = {
+  home: [
+    { title: "Today's Broke Mode Power Moves", intro: "Five things that cost nothing but pay big today.",
+      items: [
+        { title: "Audit your subscriptions", desc: "Cancel anything you haven't used in 30 days — that's $20–$80/month back instantly." },
+        { title: "Meal prep today", desc: "Four hours once a week eliminates $150+ in impulse food spending. Sunday is your most powerful financial day." },
+        { title: "Use your library card", desc: "Free books, audiobooks, movies, and museum passes. Most people forget this exists — don't be most people." },
+        { title: "Stack cashback apps", desc: "Rakuten + Ibotta + store app = triple dipping on every purchase. Set up once, profit forever." },
+        { title: "Call and negotiate", desc: "Internet, insurance, phone — one 10-minute call saves an average of $30/month. They expect you not to call." }
+      ], tip: "The best financial move is the one you actually make today, not the perfect plan you never start." },
+    { title: "5 Zero-Cost Wins for Right Now", intro: "No money required. Just attention and action.",
+      items: [
+        { title: "Check your bank fees", desc: "The average American pays $200/year in avoidable bank fees. Call and complain — most get refunded immediately." },
+        { title: "Price match your groceries", desc: "Most major stores will match a competitor's price on the spot. Screenshot it, show it, save it." },
+        { title: "Turn off one-click buying", desc: "Remove saved payment methods from Amazon. The friction saves hundreds per year." },
+        { title: "Negotiate your rent", desc: "If you've been a reliable tenant, ask. Many landlords prefer a known tenant over finding a new one." },
+        { title: "Eat what you have", desc: "Before any grocery run, do a full pantry sweep. Most households have 3–5 full meals sitting ignored." }
+      ], tip: "Broke mode isn't about deprivation — it's about attention. Pay attention to where your money actually goes." },
+    { title: "Broke Mode Moves That Hit Different", intro: "Strategies the financially comfortable never had to learn.",
+      items: [
+        { title: "Buy used, sell used", desc: "Facebook Marketplace and OfferUp are a parallel economy. Buy everything used, sell everything you don't use." },
+        { title: "Free trials are a skill", desc: "Master the calendar reminder. One free trial per month = $120+ in software you never paid for annually." },
+        { title: "Generic is usually identical", desc: "Store brand medications and cleaning supplies are often made in the same factory. Read the label." },
+        { title: "DIY your cleaning supplies", desc: "Vinegar, baking soda, and dish soap clean everything. Stop paying $8 per bottle for branded water." },
+        { title: "Walk or bike when possible", desc: "Every trip under 2 miles costs $1–2 in fuel and wear. That's $50–100/month for most people." }
+      ], tip: "Financial resilience is built in the daily decisions nobody else sees you making." },
+    { title: "This Week's Budget Power Plays", intro: "Small moves, compounding results.",
+      items: [
+        { title: "Pack lunch three days", desc: "Bringing lunch just 3 days a week saves $150–200/month vs buying out. That's a car payment." },
+        { title: "Unsubscribe from retail emails", desc: "You cannot buy what you don't know is on sale. Unsubscribe from every store email today." },
+        { title: "Use cash for discretionary spending", desc: "Physically handing over bills creates awareness that cards never will. Try it for one week." },
+        { title: "Find your local Buy Nothing group", desc: "Facebook has hyperlocal groups where people give away furniture, appliances, and clothes for free." },
+        { title: "Refinance anything with interest", desc: "High-interest debt costs you money every day. Even dropping 2% on a balance saves real money fast." }
+      ], tip: "The gap between where you are and where you want to be is filled with small daily decisions." },
+    { title: "Hustle-Mode Financial Hacks", intro: "For when you're playing offense AND defense.",
+      items: [
+        { title: "Sell something today", desc: "Walk around your home and find one thing to sell on Facebook Marketplace. Most people have $200–500 sitting unused." },
+        { title: "Open a high-yield savings account", desc: "If your savings pays less than 4%, you're losing to inflation. Takes 10 minutes to fix." },
+        { title: "Do a no-spend challenge", desc: "Pick 3 days this week to spend zero dollars outside fixed bills. It resets your spending baseline fast." },
+        { title: "Ask for a raise", desc: "The single highest ROI hour of your year is spent preparing a case for a raise. Most people never ask." },
+        { title: "Automate your savings", desc: "Set up a $25/week automatic transfer. You will not miss it. In a year that's $1,300 you didn't have." }
+      ], tip: "You don't need a perfect budget. You need one or two habits that run on autopilot." }
+  ],
+  food: [
+    { title: "This Week's Cheap Eats Playbook", intro: "Five ways to eat well and spend almost nothing.",
+      items: [
+        { title: "Rice + beans + anything", desc: "Complete protein, dirt cheap, infinitely customizable. Master this and you've solved 30% of your food budget." },
+        { title: "Frozen vegetables beat fresh", desc: "Frozen veg is picked at peak ripeness — often more nutritious than 'fresh' that traveled 1,500 miles." },
+        { title: "Egg every meal", desc: "At $0.20–0.30 per egg, it's the most affordable complete protein on earth. Breakfast, lunch, dinner — eggs work everywhere." },
+        { title: "Shop the store perimeter", desc: "Inner aisles have the highest margins and lowest nutrition. Perimeter = produce, proteins, dairy." },
+        { title: "Batch cook on Sunday", desc: "Cook grains, roast vegetables, prep proteins. Mix and match all week for near-zero effort meals." }
+      ], tip: "The cheapest meal you'll ever eat is the one you made from what was already in your kitchen." },
+    { title: "5 Meals Under $2 Per Serving", intro: "Real food. Real cheap. No compromise on taste.",
+      items: [
+        { title: "Lentil soup", desc: "Lentils, canned tomatoes, onion, garlic, cumin. $1.20/serving, feeds 6, takes 30 minutes." },
+        { title: "Oatmeal power bowl", desc: "Rolled oats, banana, peanut butter, honey. $0.80/serving and keeps you full for 5 hours." },
+        { title: "Stir fry with whatever", desc: "Frozen veg bag + rice + soy sauce + egg = complete meal for under $1.50." },
+        { title: "Black bean tacos", desc: "Canned black beans, corn tortillas, cabbage slaw. $1.40/serving and genuinely delicious." },
+        { title: "Pasta aglio e olio", desc: "Pasta, olive oil, garlic, red pepper flakes. Italian peasant food for $0.90/serving that impresses everyone." }
+      ], tip: "The most expensive ingredient in any meal is the one you didn't use and threw away. Plan before you shop." }
+  ],
+  health: [
+    { title: "Free Ways to Stay Healthy This Week", intro: "Five health moves that cost absolutely nothing.",
+      items: [
+        { title: "Walk 30 minutes daily", desc: "Free, no equipment needed, burns calories, reduces cortisol, improves sleep. The most underrated health intervention." },
+        { title: "Drink more water", desc: "Most people are mildly dehydrated constantly. Before supplements, try an extra 32oz daily for one week." },
+        { title: "Sleep is your cheapest medicine", desc: "7–9 hours improves immune function, metabolism, mood, and performance. It costs nothing and most people skip it." },
+        { title: "Bodyweight workouts", desc: "Push-ups, squats, lunges, planks. Zero equipment needed. YouTube has thousands of free guided workouts." },
+        { title: "Breathe intentionally", desc: "4-7-8 breathing reduces cortisol measurably. Inhale 4 counts, hold 7, exhale 8. Free and actually works." }
+      ], tip: "The most expensive health decision you'll ever make is ignoring the free stuff that actually works." }
+  ],
+  style: [
+    { title: "Budget Style Moves That Hit Different", intro: "Five ways to look expensive without spending like it.",
+      items: [
+        { title: "Thrift store basics first", desc: "Buy T-shirts, jeans, and chinos used — spend what you saved on one quality piece that elevates everything." },
+        { title: "Learn basic tailoring", desc: "A $10 thrift store blazer altered to fit beats a $200 off-the-rack blazer that doesn't. Fit is everything." },
+        { title: "Neutral color palette", desc: "Black, white, grey, navy, tan. Everything matches everything. You look intentional with half the wardrobe." },
+        { title: "Shoe care extends life by years", desc: "A $5 brush and polish turns $40 shoes into shoes that look $120. Clean shoes signal everything." },
+        { title: "Depop and Poshmark for brands", desc: "Designer items at 70–90% off. If you know your measurements, online thrifting is a superpower." }
+      ], tip: "Style is mostly confidence. Confidence is mostly fit. Fit costs $15 at a tailor." }
+  ],
+  travel: [
+    { title: "Broke Mode Travel Playbook", intro: "Five ways to go further and spend less.",
+      items: [
+        { title: "Google Flights explore map", desc: "Click Explore, enter your airport — it shows the cheapest destinations available right now. Let price lead." },
+        { title: "Fly Tuesday and Wednesday", desc: "Flights on these days are statistically 20–30% cheaper than weekends. Flexibility is the best travel hack." },
+        { title: "Housesit for free accommodation", desc: "TrustedHousesitters connects travelers with homeowners. Stay free in exchange for watching the place." },
+        { title: "Eat where locals eat", desc: "Walk three blocks from any tourist attraction and prices drop 40–60%. The food is also better." },
+        { title: "Travel carry-on only", desc: "Baggage fees average $35–70 per bag per flight. Master packing light and save $100+ on every round trip." }
+      ], tip: "The best travel hack is going where it's cheap right now, not where your bucket list says." }
+  ],
+  freestuff: [
+    { title: "This Week's Free Score Guide", intro: "Five legit ways to get something for nothing.",
+      items: [
+        { title: "Birthday freebies route", desc: "Starbucks, Sephora, Denny's, Chick-fil-A — plan a birthday route and collect free food and products all day." },
+        { title: "PINCHme samples", desc: "Sign up at PINCHme.com for monthly free full-size product samples. New drops every Tuesday — set an alarm." },
+        { title: "Reddit r/freebies daily", desc: "Updated constantly with verified free products, samples, and no-purchase offers from real people." },
+        { title: "Library of Things", desc: "Many public libraries loan tools, cameras, instruments, and board games. Check your local library's catalog." },
+        { title: "Email the manufacturer", desc: "Tell your favorite brand you love their product. Most will send coupons or free samples directly." }
+      ], tip: "The freebie mindset isn't about being cheap — it's about knowing what you're owed as a loyal customer." }
+  ],
+  shop: [
+    { title: "This Week's Smart Shopping Moves", intro: "Five ways to buy smarter and spend less right now.",
+      items: [
+        { title: "CamelCamelCamel before Amazon", desc: "Check price history before buying anything on Amazon. Most items go on sale cyclically — wait and save 20–40%." },
+        { title: "Open box at Best Buy", desc: "Open box items are often returns with zero defects. Same product, same warranty, 15–30% cheaper." },
+        { title: "Buy refurbished electronics", desc: "Apple Certified Refurbished, Dell Outlet, Amazon Renewed — same quality with warranties at 20–40% off retail." },
+        { title: "Warehouse stores for staples", desc: "Costco and Sam's Club unit prices on paper products and pantry staples beat every other option." },
+        { title: "Wait 72 hours on any purchase over $50", desc: "The 72-hour rule kills impulse buys. If you still want it after three days, it's probably worth it." }
+      ], tip: "The best purchase is the one you didn't make impulsively. Patience is the most profitable shopping strategy." }
+  ],
+  pets: [
+    { title: "Broke Mode Pet Parent Guide", intro: "Five ways to spoil your pet without breaking the bank.",
+      items: [
+        { title: "Buy pet food in bulk", desc: "Chewy's Autoship saves 35% on repeat orders. Set it, forget it, never pay full price again." },
+        { title: "Low-cost vet clinics", desc: "PetSmart and Petco partner with low-cost clinics for vaccines at 50–70% below private vet prices." },
+        { title: "DIY toys work just as well", desc: "A cardboard box, paper bag, crinkled foil ball — cats especially don't care about price tags." },
+        { title: "Preventative care saves thousands", desc: "Monthly flea prevention, dental chews, and regular nail trims prevent the vet bills that actually hurt." },
+        { title: "Pet insurance for young animals", desc: "$30–50/month for a puppy pays for itself on the first emergency. Don't wait until rates go up." }
+      ], tip: "Your pet doesn't know what their toys cost. They know if you showed up. Show up." }
+  ],
+  drinks: [
+    { title: "This Week's Broke Mode Bar Cart", intro: "Five ways to drink well and spend less.",
+      items: [
+        { title: "Buy handles not bottles", desc: "The 1.75L handle is 30–40% cheaper per ounce than the 750ml bottle. Do the math once." },
+        { title: "Learn 3 cocktails well", desc: "Old Fashioned, Margarita, Gin & Tonic. Know these cold and you never overpay at a bar for basics again." },
+        { title: "Trader Joe's wine section", desc: "Their $5–8 wines consistently outperform bottles costing 3x as much in blind tastings." },
+        { title: "Happy hour is a lifestyle", desc: "Most bars offer 50% off from 4–6pm. Shift your schedule 90 minutes and cut your bar tab in half." },
+        { title: "SodaStream upgrade", desc: "Pays for itself in 3 months vs buying sparkling water. Great mixer, zero waste, always on hand." }
+      ], tip: "Drinking well on a budget is about knowing what you actually like and buying more of that." }
+  ],
+  music: [
+    { title: "Broke Mode Listening Guide", intro: "Five ways to fill your ears without emptying your wallet.",
+      items: [
+        { title: "Spotify free is genuinely fine", desc: "Shuffle mode and ads are a small price for 100 million songs. Use it on WiFi and data stays flat." },
+        { title: "YouTube Music free tier", desc: "No subscription required for full catalog access. Video ads are a small price for infinite music." },
+        { title: "Library digital access", desc: "Libby and Hoopla give free audiobooks and music through your library card. Completely free." },
+        { title: "SoundCloud for discovery", desc: "Independent artists, early releases, underground scenes — content you literally can't find anywhere else." },
+        { title: "Family plans split six ways", desc: "Spotify Family split 6 ways costs under $3/month each. Find 5 people and make it happen." }
+      ], tip: "The best music is the music that moves you. Most of it is free if you know where to look." }
+  ],
+
+  beauty: [
+    { title: "Broke Mode Beauty Playbook", intro: "Five ways to glow up without paying up.",
+      items: [
+        { title: "Vitamin C serum is the cheat code", desc: "The one skincare ingredient dermatologists universally agree on. Find it for $12–15 and skip the $80 branded version." },
+        { title: "Drugstore dupes are real", desc: "e.l.f., Wet n Wild, and NYX consistently beat prestige brands in blind tests. Learn 3 dupes for your most-used products." },
+        { title: "SPF every single day", desc: "The most anti-aging thing you can do costs $8 and takes 30 seconds. Skipping it costs thousands in treatments later." },
+        { title: "Vaseline is a luxury dupe", desc: "High-end lip treatments, cuticle creams, and skin balms are mostly petrolatum. Vaseline does the same thing for $3." },
+        { title: "Request samples before buying", desc: "Sephora, Ulta, and most beauty counters will give samples on request. Test before spending $40 on something that breaks you out." }
+      ], tip: "The beauty industry is built on convincing you that price equals quality. It rarely does." }
+  ],
+  meals: [
+    { title: "5 Quick Meals Under $5 Per Serving", intro: "Fast, cheap, and actually good.",
+      items: [
+        { title: "Fried rice 10-minute version", desc: "Day-old rice, egg, soy sauce, frozen peas, sesame oil. Under $1.50/serving and better than takeout." },
+        { title: "Bean and cheese quesadillas", desc: "Canned beans, shredded cheese, flour tortillas. $1.20/serving, ready in 8 minutes, customizable infinitely." },
+        { title: "Pasta with canned tomatoes", desc: "Pasta, canned crushed tomatoes, garlic, olive oil, basil. $0.90/serving and tastes like you actually cooked." },
+        { title: "Loaded baked potato", desc: "Potato, canned chili, shredded cheese, sour cream. $1.80/serving and filling enough to skip dessert." },
+        { title: "Scrambled egg tacos", desc: "Eggs, corn tortillas, salsa, whatever cheese you have. $1.10/serving and works for breakfast, lunch, or dinner." }
+      ], tip: "The fastest meal you can make is the one with ingredients already in your kitchen. Shop your pantry first." }
+  ],
+  coupons: [
+    { title: "Stack These Deals This Week", intro: "Five ways to legally pay less for everything.",
+      items: [
+        { title: "The triple stack method", desc: "Store sale + manufacturer coupon + cashback app = paying almost nothing. Ibotta + store circular + paper coupon is the trifecta." },
+        { title: "Cashback credit cards on everything", desc: "If you pay it off monthly, a 2% cashback card on all spending is $240/year back on $12,000 in normal expenses." },
+        { title: "Price match guarantee stacking", desc: "Show Target a lower price, get it matched, then use your Target Circle coupon on top. Most stores allow this." },
+        { title: "Ibotta before every grocery run", desc: "Check Ibotta before your list is final. Build your list around what has cashback this week. Saves $15–30 per trip." },
+        { title: "Browser extensions are passive money", desc: "Honey and Rakuten run in the background and find codes automatically. Install once, save forever." }
+      ], tip: "Couponing isn't about clipping paper. It's about building a system that runs while you shop normally." }
+  ],
+  fun: [
+    { title: "This Weekend's Free Fun Ideas", intro: "Five things to do that cost next to nothing.",
+      items: [
+        { title: "National Park free days", desc: "The NPS offers free entry on specific days all year. Check nps.gov/planyourvisit/fee-free-parks.htm." },
+        { title: "Free museum days", desc: "Most major museums offer free admission once a month. Google your city + 'free museum days' and build a calendar." },
+        { title: "Outdoor movie nights", desc: "Cities run free outdoor screenings all summer. Bring a blanket, make popcorn at home, arrive early." },
+        { title: "Community events calendar", desc: "Your city parks and rec department runs free concerts, festivals, and workshops most people never find." },
+        { title: "Host a game night", desc: "Potluck + board games + good people = a better night than any $60/person restaurant. Host one this week." }
+      ], tip: "The most memorable nights rarely cost the most money. They cost the most intention." }
+  ]
+};
+
+// ── CONTENT ENGINE ────────────────────────────────────────────
+function loadAIContent(containerId, topic, promptText) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  let bank = CONTENT_BANKS.home;
+  const t = (topic || '').toLowerCase();
+  if (t.includes('food') || t.includes('meal') || t.includes('eat'))             bank = CONTENT_BANKS.food;
+  else if (t.includes('health') || t.includes('wellness'))                        bank = CONTENT_BANKS.health;
+  else if (t.includes('style') || t.includes('fashion'))                          bank = CONTENT_BANKS.style;
+  else if (t.includes('travel'))                                                   bank = CONTENT_BANKS.travel;
+  else if (t.includes('free') || t.includes('freebie') || t.includes('sample'))  bank = CONTENT_BANKS.freestuff;
+  else if (t.includes('shop') || t.includes('buy') || t.includes('deal'))        bank = CONTENT_BANKS.shop;
+  else if (t.includes('pet'))                                                      bank = CONTENT_BANKS.pets;
+  else if (t.includes('drink') || t.includes('cocktail') || t.includes('bar'))   bank = CONTENT_BANKS.drinks;
+  else if (t.includes('music') || t.includes('audio') || t.includes('listen'))   bank = CONTENT_BANKS.music;
+  else if (t.includes('fun') || t.includes('entertain') || t.includes('activ'))  bank = CONTENT_BANKS.fun;
+  else if (t.includes('beauty') || t.includes('skincare') || t.includes('makeup'))   bank = CONTENT_BANKS.beauty;
+  else if (t.includes('meal') || t.includes('quick') || t.includes('recipe'))         bank = CONTENT_BANKS.meals;
+  else if (t.includes('coupon') || t.includes('stack') || t.includes('deal hunt'))    bank = CONTENT_BANKS.coupons;
+
+  const data = bank[Math.floor(Math.random() * bank.length)];
+  renderAIContent(container, data, topic);
+}
+
+function renderAIContent(container, data, topic) {
+  const itemsHTML = (data.items || []).map(item => `
+    <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">${item.title}</strong> — ${item.desc}</li>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="ai-block">
+      <span class="ai-badge">✦ Fresh Pick</span>
+      <h3>${data.title || topic}</h3>
+      ${data.intro ? `<p style="margin-bottom:1rem">${data.intro}</p>` : ''}
+      ${itemsHTML ? `<ul style="margin:1rem 0;padding-left:1.2rem">${itemsHTML}</ul>` : ''}
+      ${data.tip ? `<p style="color:var(--lime);margin-top:1.2rem">💡 ${data.tip}</p>` : ''}
+    </div>`;
+}
+
+// ── BLOG RSS FEED ─────────────────────────────────────────────
+const RSS_FEEDS = [
+  { name: 'The Penny Hoarder',     url: 'https://www.thepennyhoarder.com/feed/' },
+  { name: 'Frugalwoods',           url: 'https://www.frugalwoods.com/feed/' },
+  { name: 'Budget Bytes',          url: 'https://www.budgetbytes.com/feed/' },
+  { name: 'Making Sense of Cents', url: 'https://www.makingsenseofcents.com/feed' },
+];
+
+async function loadBlogFeed(containerId, maxItems = 9) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = '<div class="ai-loading" style="padding:3rem 2rem">Loading latest articles...</div>';
+
+  const allItems = [];
+
+  // Try multiple RSS-to-JSON services in sequence
+  const PROXIES = [
+    (url) => `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&count=4`,
+    (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+    (url) => `https://rss.app/feeds/v1.1/${encodeURIComponent(url)}.json`,
+  ];
+
+  for (const feed of RSS_FEEDS) {
+    let loaded = false;
+
+    // Try rss2json first
+    try {
+      const res  = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=4`);
+      const json = await res.json();
+      if (json.status === 'ok' && json.items && json.items.length > 0) {
+        json.items.forEach(item => {
+          const title = item.title || '';
+          const link  = item.link || '#';
+          const desc  = (item.description || item.content || '').replace(/<[^>]+>/g,'').slice(0,120);
+          const date  = item.pubDate || '';
+          if (title) allItems.push({ title, link, desc, date, source: feed.name });
+        });
+        loaded = true;
+      }
+    } catch(e) {}
+
+    // Fallback to allorigins if rss2json failed for this feed
+    if (!loaded) {
+      try {
+        const res   = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`);
+        const json  = await res.json();
+        const parser = new DOMParser();
+        const xml   = parser.parseFromString(json.contents, 'text/xml');
+        const items = [...xml.querySelectorAll('item')].slice(0, 4);
+        items.forEach(item => {
+          const title = item.querySelector('title')?.textContent || '';
+          const link  = item.querySelector('link')?.textContent || '#';
+          const desc  = item.querySelector('description')?.textContent?.replace(/<[^>]+>/g,'').slice(0,120) || '';
+          const date  = item.querySelector('pubDate')?.textContent || '';
+          if (title) allItems.push({ title, link, desc, date, source: feed.name });
+        });
+      } catch(e) {}
+    }
+  }
+
+  if (allItems.length === 0) {
+    // Show static fallback articles so page is never empty
+    const fallback = [
+      { source:'The Penny Hoarder', title:'25 Legit Ways to Make Extra Money This Month', link:'https://www.thepennyhoarder.com', desc:'Whether you need a little extra cash or want to build a side income, these proven strategies actually work.', date:'' },
+      { source:'Budget Bytes', title:'How to Meal Prep for the Week for Under $50', link:'https://www.budgetbytes.com', desc:'Batch cooking saves time and money. Here's how to stock your fridge with a week of meals without breaking the bank.', date:'' },
+      { source:'Frugalwoods', title:'The Simple Framework for Achieving Financial Independence', link:'https://www.frugalwoods.com', desc:'Financial independence doesn't require a six-figure income. It requires a gap between what you earn and what you spend.', date:'' },
+      { source:'Making Sense of Cents', title:'How I Paid Off $40,000 in Debt While Working Full Time', link:'https://www.makingsenseofcents.com', desc:'Debt payoff is possible on any income. The key is consistency, a plan, and knowing exactly where every dollar goes.', date:'' },
+      { source:'The Penny Hoarder', title:'Best Cashback Apps That Actually Pay You Back', link:'https://www.thepennyhoarder.com', desc:'Ibotta, Rakuten, and others put real cash back in your pocket on purchases you were already making.', date:'' },
+      { source:'Budget Bytes', title:'10 Dinners Under $2 Per Serving', link:'https://www.budgetbytes.com', desc:'Eating well on a tight budget is completely doable. These recipes prove you don't have to sacrifice taste to save money.', date:'' },
+    ];
+    allItems.push(...fallback);
+  }
+
+  allItems.sort(() => Math.random() - 0.5);
+  const shown = allItems.slice(0, maxItems);
+
+  container.innerHTML = '<div class="blog-grid">' + shown.map(item =>
+    '<a class="blog-card" href="' + item.link + '" target="_blank" rel="noopener">' +
+    '<span class="blog-source">' + item.source + '</span>' +
+    '<span class="blog-title">' + item.title + '</span>' +
+    '<span class="blog-desc">' + item.desc + '...</span>' +
+    '<span class="blog-date">' + (item.date ? new Date(item.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '') + '</span>' +
+    '</a>'
+  ).join('') + '</div>';
+}
+
+</script>
+<script>
+const allyoucaneatPrompt = `You are a budget food expert for BrokeModeLife.com. Generate 5 budget meal tips and recipes today. Return ONLY valid JSON:
+{"title":"This Week's Cheap Eats Playbook","intro":"Five ways to eat well and spend almost nothing.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold closing food hack."}`;
+function refreshallyoucaneat() {
+  loadAIContent('allyoucaneat-ai', 'Budget Meal Planning & Cheap Eats', allyoucaneatPrompt);
+}
+refreshallyoucaneat();
+</script>
+</body>
+</html>
