@@ -1398,9 +1398,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const gooutandplayPrompt = `You are an entertainment expert for BrokeModeLife.com. Generate 5 free or near-free fun activity ideas. Return ONLY valid JSON:
 {"title":"This Weekend's Free Fun Ideas","intro":"Five things to do that cost next to nothing.","items":[{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"}],"tip":"Bold insight about free entertainment."}`;
 function refreshgooutandplay() {
-  loadAIContent('gooutandplay-ai', 'Free & Cheap Entertainment Ideas', gooutandplayPrompt);
 }
-refreshgooutandplay();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('gooutandplay-ai', 'Free & Cheap Entertainment Ideas', gooutandplayPrompt);
+  refreshgooutandplay();
+});
 </script>
 </body>
 </html>

@@ -1394,9 +1394,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const appleadayPrompt = `You are a budget wellness expert for BrokeModeLife.com. Generate 5 free or cheap health tips. Return ONLY valid JSON:
 {"title":"Free Ways to Stay Healthy This Week","intro":"Five health moves that cost nothing.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold closing wellness insight."}`;
 function refreshappleaday() {
-  loadAIContent('appleaday-ai', 'Budget Health & Wellness Tips', appleadayPrompt);
 }
-refreshappleaday();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('appleaday-ai', 'Budget Health & Wellness Tips', appleadayPrompt);
+  refreshappleaday();
+});
 </script>
 </body>
 </html>

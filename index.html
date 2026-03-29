@@ -1530,10 +1530,7 @@ refreshHomeTip();
 </script>
 <script>
 function refreshHomeTip() {
-  loadAIContent('home-ai-tips', 'Budget Living Tips Hacks Savings', '');
 }
-refreshHomeTip();
-loadBlogFeed('home-blog-feed', 6);
 
 // Back to top
 if (!document.querySelector('.back-to-top')) {
@@ -1544,6 +1541,12 @@ if (!document.querySelector('.back-to-top')) {
   window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400));
   btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('home-ai-tips', 'Budget Living Tips Hacks Savings', '');
+  refreshHomeTip();
+  loadBlogFeed('home-blog-feed', 6);
+});
 </script>
 </body>
 </html>

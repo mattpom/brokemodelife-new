@@ -1429,9 +1429,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const shopPrompt = `You are a budget shopping expert for BrokeModeLife.com. Generate 5 smart shopping strategies for this week. Return ONLY valid JSON:
 {"title":"This Week's Smart Shopping Moves","intro":"Five ways to buy smarter and spend less right now.","items":[{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"}],"tip":"Bold insight about broke-mode shopping strategy."}`;
 function refreshShop() {
-  loadAIContent('shop-ai', 'Smart Shopping Strategies', shopPrompt);
 }
-refreshShop();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('shop-ai', 'Smart Shopping Strategies', shopPrompt);
+  refreshShop();
+});
 </script>
 </body>
 </html>

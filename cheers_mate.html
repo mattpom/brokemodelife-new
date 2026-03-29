@@ -1398,9 +1398,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const cheersmatePrompt = `You are a budget bartender for BrokeModeLife.com. Generate 5 budget drink tips and cheap cocktail ideas. Return ONLY valid JSON:
 {"title":"This Week's Broke Mode Bar Cart","intro":"Five ways to drink well and spend less.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight about budget drinking."}`;
 function refreshcheersmate() {
-  loadAIContent('cheersmate-ai', 'Budget Cocktails & Cheap Drinks', cheersmatePrompt);
 }
-refreshcheersmate();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('cheersmate-ai', 'Budget Cocktails & Cheap Drinks', cheersmatePrompt);
+  refreshcheersmate();
+});
 </script>
 </body>
 </html>

@@ -1395,9 +1395,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const budgetbeautyPrompt = `You are a budget beauty expert for BrokeModeLife.com. Generate 5 beauty tips for tight budgets. Return ONLY valid JSON:
 {"title":"Broke Mode Beauty Playbook","intro":"Five ways to glow up without paying up.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight about budget beauty."}`;
 function refreshbudgetbeauty() {
-  loadAIContent('budgetbeauty-ai', 'Budget Beauty & Skincare Tips', budgetbeautyPrompt);
 }
-refreshbudgetbeauty();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('budgetbeauty-ai', 'Budget Beauty & Skincare Tips', budgetbeautyPrompt);
+  refreshbudgetbeauty();
+});
 </script>
 </body>
 </html>

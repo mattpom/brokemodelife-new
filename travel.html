@@ -1399,9 +1399,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const travelPrompt = `You are a budget travel expert for BrokeModeLife.com. Generate 5 money-saving travel tips. Return ONLY valid JSON:
 {"title":"Broke Mode Travel Playbook","intro":"Five ways to go further and spend less.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight about traveling broke but bold."}`;
 function refreshtravel() {
-  loadAIContent('travel-ai', 'Budget Travel Tips & Hacks', travelPrompt);
 }
-refreshtravel();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('travel-ai', 'Budget Travel Tips & Hacks', travelPrompt);
+  refreshtravel();
+});
 </script>
 </body>
 </html>

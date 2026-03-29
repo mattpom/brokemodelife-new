@@ -1440,9 +1440,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const listenherePrompt = `You are a budget audio/music expert for BrokeModeLife.com. Generate 5 tips for getting great music and audio for free or cheap. Return ONLY valid JSON:
 {"title":"Broke Mode Listening Guide","intro":"Five ways to fill your ears without emptying your wallet.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight on free audio."}`;
 function refreshlistenhere() {
-  loadAIContent('listenhere-ai', 'Free Music Streaming & Budget Audio', listenherePrompt);
 }
-refreshlistenhere();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('listenhere-ai', 'Free Music Streaming & Budget Audio', listenherePrompt);
+  refreshlistenhere();
+});
 </script>
 </body>
 </html>

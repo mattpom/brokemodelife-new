@@ -1382,9 +1382,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const couponstackPrompt = `You are a deal-stacking expert for BrokeModeLife.com. Generate 5 coupon and deal-stacking strategies. Return ONLY valid JSON:
 {"title":"Stack These Deals This Week","intro":"Five ways to legally pay less for everything.","items":[{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"}],"tip":"Bold insight about the deal-stacking mindset."}`;
 function refreshcouponstack() {
-  loadAIContent('couponstack-ai', 'Coupon Stacking, Deal Hunting & Discount Mastery', couponstackPrompt);
 }
-refreshcouponstack();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('couponstack-ai', 'Coupon Stacking, Deal Hunting & Discount Mastery', couponstackPrompt);
+  refreshcouponstack();
+});
 </script>
 </body>
 </html>

@@ -1394,9 +1394,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const stylePrompt = `You are a budget fashion expert for BrokeModeLife.com. Generate 5 style tips for people on tight budgets. Return ONLY valid JSON:
 {"title":"Budget Style Moves That Hit Different","intro":"Five ways to look expensive without spending like it.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold style insight for the budget-conscious."}`;
 function refreshstyle() {
-  loadAIContent('style-ai', 'Budget Fashion & Style Hacks', stylePrompt);
 }
-refreshstyle();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('style-ai', 'Budget Fashion & Style Hacks', stylePrompt);
+  refreshstyle();
+});
 </script>
 </body>
 </html>

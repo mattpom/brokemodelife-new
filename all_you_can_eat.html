@@ -1390,9 +1390,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const allyoucaneatPrompt = `You are a budget food expert for BrokeModeLife.com. Generate 5 budget meal tips and recipes today. Return ONLY valid JSON:
 {"title":"This Week's Cheap Eats Playbook","intro":"Five ways to eat well and spend almost nothing.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold closing food hack."}`;
 function refreshallyoucaneat() {
-  loadAIContent('allyoucaneat-ai', 'Budget Meal Planning & Cheap Eats', allyoucaneatPrompt);
 }
-refreshallyoucaneat();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('allyoucaneat-ai', 'Budget Meal Planning & Cheap Eats', allyoucaneatPrompt);
+  refreshallyoucaneat();
+});
 </script>
 </body>
 </html>

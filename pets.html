@@ -1398,9 +1398,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const petsPrompt = `You are a budget pet care expert for BrokeModeLife.com. Generate 5 money-saving pet care tips. Return ONLY valid JSON:
 {"title":"Broke Mode Pet Parent Guide","intro":"Five ways to spoil your pet without breaking the bank.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight about budget pet ownership."}`;
 function refreshpets() {
-  loadAIContent('pets-ai', 'Budget Pet Care Tips', petsPrompt);
 }
-refreshpets();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('pets-ai', 'Budget Pet Care Tips', petsPrompt);
+  refreshpets();
+});
 </script>
 </body>
 </html>

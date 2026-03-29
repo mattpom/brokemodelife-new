@@ -1382,9 +1382,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const quickmealsPrompt = `You are a budget chef for BrokeModeLife.com. Generate 5 quick meal ideas under $5 per serving. Return ONLY valid JSON:
 {"title":"5 Quick Meals Under $5 Per Serving","intro":"Fast, cheap, and actually good.","items":[{"title":"meal name","desc":"ingredients and one-line method"},{"title":"meal name","desc":"ingredients and one-line method"},{"title":"meal name","desc":"ingredients and one-line method"},{"title":"meal name","desc":"ingredients and one-line method"},{"title":"meal name","desc":"ingredients and one-line method"}],"tip":"Bold meal prep insight."}`;
 function refreshquickmeals() {
-  loadAIContent('quickmeals-ai', 'Quick Cheap Meal Ideas', quickmealsPrompt);
 }
-refreshquickmeals();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('quickmeals-ai', 'Quick Cheap Meal Ideas', quickmealsPrompt);
+  refreshquickmeals();
+});
 </script>
 </body>
 </html>

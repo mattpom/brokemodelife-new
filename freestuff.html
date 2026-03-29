@@ -1396,9 +1396,12 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 const freestuffPrompt = `You are a freebie expert for BrokeModeLife.com. Generate 5 ways to score free stuff this week. Return ONLY valid JSON:
 {"title":"This Week's Free Score Guide","intro":"Five legit ways to get something for nothing.","items":[{"title":"freebie","desc":"one action sentence on how to get it"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"}],"tip":"Bold insight about the freebie mindset."}`;
 function refreshfreestuff() {
-  loadAIContent('freestuff-ai', 'Best Freebies & Samples This Week', freestuffPrompt);
 }
-refreshfreestuff();
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('freestuff-ai', 'Best Freebies & Samples This Week', freestuffPrompt);
+  refreshfreestuff();
+});
 </script>
 </body>
 </html>

@@ -1364,12 +1364,15 @@ const blogAIPrompt = `You are an editorial writer for BrokeModeLife.com. Write a
 {"title":"This Week in Broke Mode","intro":"One sharp sentence on the big theme this week.","items":[{"title":"Trend","desc":"one sentence insight"},{"title":"Trend","desc":"one sentence insight"},{"title":"Trend","desc":"one sentence insight"},{"title":"Trend","desc":"one sentence insight"}],"tip":"One bold closing line that sends readers out the door fired up."}`;
 
 function refreshBlogAI() {
-  loadAIContent('blog-ai', 'Weekly Budget Living Digest', blogAIPrompt);
 }
 
 // Load both on page init
-refreshBlogAI();
-loadBlogFeed('rss-feed', 12);
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadAIContent('blog-ai', 'Weekly Budget Living Digest', blogAIPrompt);
+  refreshBlogAI();
+  loadBlogFeed('rss-feed', 12);
+});
 </script>
 </body>
 </html>
