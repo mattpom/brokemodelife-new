@@ -1326,92 +1326,61 @@ function renderAIContent(container, data, topic) {
     </div>`;
 }
 
-// ── BLOG RSS FEED ─────────────────────────────────────────────
-const RSS_FEEDS = [
-  { name: 'The Penny Hoarder',     url: 'https://www.thepennyhoarder.com/feed/' },
-  { name: 'Frugalwoods',           url: 'https://www.frugalwoods.com/feed/' },
-  { name: 'Budget Bytes',          url: 'https://www.budgetbytes.com/feed/' },
-  { name: 'Making Sense of Cents', url: 'https://www.makingsenseofcents.com/feed' },
+
+// STATIC BLOG ARTICLES — Always loads, never fails
+const STATIC_ARTICLES = [
+  { source:'The Penny Hoarder', title:'25 Legit Ways to Make Extra Money This Month', link:'https://www.thepennyhoarder.com/make-money/', desc:'Side hustles, gig work, and smart money moves that actually pay off this month.' },
+  { source:'Budget Bytes', title:'How to Meal Prep for the Week for Under $50', link:'https://www.budgetbytes.com/category/recipes/meal-prep/', desc:'Batch cooking saves time and money. Stock your fridge with a full week of meals.' },
+  { source:'Frugalwoods', title:'The Simple Framework for Spending Less Without Feeling Deprived', link:'https://www.frugalwoods.com/', desc:'Frugality is not about deprivation. It is about intentionality and getting more from what you already have.' },
+  { source:'Making Sense of Cents', title:'How to Save Money Every Single Month', link:'https://www.makingsenseofcents.com/category/save-money/', desc:'Practical money saving strategies that work regardless of income level.' },
+  { source:'The Penny Hoarder', title:'Best Cashback Apps That Actually Pay You Back', link:'https://www.thepennyhoarder.com/save-money/cashback-apps/', desc:'Ibotta, Rakuten, and others put real cash back in your pocket on purchases you were already making.' },
+  { source:'Budget Bytes', title:'10 Dinners Under $2 Per Serving', link:'https://www.budgetbytes.com/', desc:'Eating well on a tight budget is completely doable. These recipes prove you do not have to sacrifice taste.' },
+  { source:'Frugalwoods', title:'Why We Track Every Dollar We Spend', link:'https://www.frugalwoods.com/', desc:'You cannot manage what you do not measure. Tracking spending is the foundation of every financial win.' },
+  { source:'Making Sense of Cents', title:'The Best Side Hustles to Start This Year', link:'https://www.makingsenseofcents.com/category/make-money/', desc:'Proven ways to earn extra income that fit around your existing schedule.' },
+  { source:'The Penny Hoarder', title:'How to Build an Emergency Fund When You Have No Extra Money', link:'https://www.thepennyhoarder.com/save-money/emergency-fund/', desc:'Starting small is infinitely better than not starting. Here is how to build your safety net.' },
 ];
 
-async function loadBlogFeed(containerId, maxItems = 9) {
+async function loadBlogFeed(containerId, maxItems) {
   const container = document.getElementById(containerId);
   if (!container) return;
-
-  container.innerHTML = '<div class="ai-loading" style="padding:3rem 2rem">Loading latest articles...</div>';
-
-  const allItems = [];
-
-  // Try multiple RSS-to-JSON services in sequence
-  const PROXIES = [
-    (url) => `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&count=4`,
-    (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
-    (url) => `https://rss.app/feeds/v1.1/${encodeURIComponent(url)}.json`,
-  ];
-
-  for (const feed of RSS_FEEDS) {
-    let loaded = false;
-
-    // Try rss2json first
-    try {
-      const res  = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=4`);
-      const json = await res.json();
-      if (json.status === 'ok' && json.items && json.items.length > 0) {
-        json.items.forEach(item => {
-          const title = item.title || '';
-          const link  = item.link || '#';
-          const desc  = (item.description || item.content || '').replace(/<[^>]+>/g,'').slice(0,120);
-          const date  = item.pubDate || '';
-          if (title) allItems.push({ title, link, desc, date, source: feed.name });
-        });
-        loaded = true;
-      }
-    } catch(e) {}
-
-    // Fallback to allorigins if rss2json failed for this feed
-    if (!loaded) {
-      try {
-        const res   = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`);
-        const json  = await res.json();
-        const parser = new DOMParser();
-        const xml   = parser.parseFromString(json.contents, 'text/xml');
-        const items = [...xml.querySelectorAll('item')].slice(0, 4);
-        items.forEach(item => {
-          const title = item.querySelector('title')?.textContent || '';
-          const link  = item.querySelector('link')?.textContent || '#';
-          const desc  = item.querySelector('description')?.textContent?.replace(/<[^>]+>/g,'').slice(0,120) || '';
-          const date  = item.querySelector('pubDate')?.textContent || '';
-          if (title) allItems.push({ title, link, desc, date, source: feed.name });
-        });
-      } catch(e) {}
+  
+  container.innerHTML = '<div class="ai-loading" style="padding:2rem">Loading articles...</div>';
+  
+  let allItems = [...STATIC_ARTICLES];
+  
+  // Try to fetch live RSS — if it works, great; if not, use static
+  try {
+    const res = await Promise.race([
+      fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.thepennyhoarder.com%2Ffeed%2F&count=3'),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 4000))
+    ]);
+    const json = await res.json();
+    if (json.status === 'ok' && json.items && json.items.length > 0) {
+      const live = json.items.map(item => ({
+        source: 'The Penny Hoarder',
+        title: item.title,
+        link: item.link,
+        desc: (item.description || '').replace(/<[^>]+>/g,'').slice(0,120)
+      }));
+      allItems = [...live, ...allItems];
     }
+  } catch(e) {
+    // Use static content — already loaded above
   }
-
-  if (allItems.length === 0) {
-    // Show static fallback articles so page is never empty
-    const fallback = [
-      { source:'The Penny Hoarder', title:'25 Legit Ways to Make Extra Money This Month', link:'https://www.thepennyhoarder.com', desc:'Whether you need a little extra cash or want to build a side income, these proven strategies actually work.', date:'' },
-      { source:'Budget Bytes', title:'How to Meal Prep for the Week for Under $50', link:'https://www.budgetbytes.com', desc:'Batch cooking saves time and money. Here's how to stock your fridge with a week of meals without breaking the bank.', date:'' },
-      { source:'Frugalwoods', title:'The Simple Framework for Achieving Financial Independence', link:'https://www.frugalwoods.com', desc:'Financial independence doesn't require a six-figure income. It requires a gap between what you earn and what you spend.', date:'' },
-      { source:'Making Sense of Cents', title:'How I Paid Off $40,000 in Debt While Working Full Time', link:'https://www.makingsenseofcents.com', desc:'Debt payoff is possible on any income. The key is consistency, a plan, and knowing exactly where every dollar goes.', date:'' },
-      { source:'The Penny Hoarder', title:'Best Cashback Apps That Actually Pay You Back', link:'https://www.thepennyhoarder.com', desc:'Ibotta, Rakuten, and others put real cash back in your pocket on purchases you were already making.', date:'' },
-      { source:'Budget Bytes', title:'10 Dinners Under $2 Per Serving', link:'https://www.budgetbytes.com', desc:'Eating well on a tight budget is completely doable. These recipes prove you don't have to sacrifice taste to save money.', date:'' },
-    ];
-    allItems.push(...fallback);
-  }
-
+  
+  // Shuffle and limit
   allItems.sort(() => Math.random() - 0.5);
-  const shown = allItems.slice(0, maxItems);
-
+  const shown = allItems.slice(0, maxItems || 9);
+  
   container.innerHTML = '<div class="blog-grid">' + shown.map(item =>
     '<a class="blog-card" href="' + item.link + '" target="_blank" rel="noopener">' +
     '<span class="blog-source">' + item.source + '</span>' +
     '<span class="blog-title">' + item.title + '</span>' +
-    '<span class="blog-desc">' + item.desc + '...</span>' +
-    '<span class="blog-date">' + (item.date ? new Date(item.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '') + '</span>' +
+    '<span class="blog-desc">' + item.desc + '</span>' +
     '</a>'
   ).join('') + '</div>';
 }
+
 
 </script>
 </body>
