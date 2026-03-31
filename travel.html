@@ -1058,17 +1058,6 @@ body { overflow-x: hidden; max-width: 100vw; }
   opacity: 1 !important;
 }
 
-
-/* Kill browser autofill white background */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
-  -webkit-text-fill-color: #000000 !important;
-  caret-color: #000000 !important;
-}
-
 </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
@@ -1234,7 +1223,11 @@ input:-webkit-autofill:active {
         action="https://179420ee.sibforms.com/serve/MUIFAFFWYcVQlpxFP2jX2rwdLqN2mTgNrN871GxiWiz06yv0YFpzg6h7T4XCp-Gdz_g_O4XwFbIKqi9R_VIXj4Ln05-zxpsA0kg0-zewj7MLIDZTv_J8D6MfL5y5kNdOxfdlGtKihit6eWD7JI3j8LAMz-gD4XHqvvGdyXw956jAknm13oWHgu9jnj21Umr4_k6CDi7m_ekVlqAMvA==" 
         method="POST"
         target="_blank">
-    <input type="email" name="EMAIL" placeholder="your@email.com" required autocomplete="off" style="background:#ffffff!important;color:#000000!important;-webkit-text-fill-color:#000000!important;border:2px solid #c8f135!important;caret-color:#000000!important;">
+    <input type="email" 
+           name="EMAIL" 
+           placeholder="your@email.com" 
+           required
+           autocomplete="email">
     <input type="text" name="email_address_check" value="" style="display:none">
     <input type="hidden" name="locale" value="en">
     <button type="submit">Join Free →</button>
