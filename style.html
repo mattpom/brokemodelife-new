@@ -1636,5 +1636,31 @@ document.addEventListener("DOMContentLoaded", function() {
   refreshstyle();
 });
 </script>
+<style>
+/* Brevo Input Fix - Force visibility */
+.sib-form input[type="text"],
+.sib-form input[name="EMAIL"],
+#EMAIL,
+.input.input {
+  color: #ffffff !important;
+  background-color: rgba(20,20,20,0.9) !important;
+  border: 1px solid #c8f135 !important;
+  caret-color: #c8f135 !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+.sib-form input[type="text"]:focus,
+#EMAIL:focus {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: rgba(30,30,30,0.9) !important;
+}
+.sib-form input::placeholder,
+#EMAIL::placeholder {
+  color: #888888 !important;
+  -webkit-text-fill-color: #888888 !important;
+  opacity: 1 !important;
+}
+</style>
 </body>
 </html>
