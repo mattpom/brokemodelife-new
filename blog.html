@@ -1177,6 +1177,35 @@ body { overflow-x: hidden; max-width: 100vw; }
   .entry__specification { display: none !important; }
   #sib-form-container { max-width: 460px !important; margin: 0 auto !important; }
   .sib-form-message-panel { max-width: 460px !important; margin: 0 auto 1rem !important; }
+
+/* Brevo Form Fixes */
+#sib-container input.input {
+  background: rgba(255,255,255,0.1) !important;
+  color: #f0f0f0 !important;
+  border: 1px solid rgba(200,241,53,0.4) !important;
+  caret-color: #c8f135 !important;
+  -webkit-text-fill-color: #f0f0f0 !important;
+}
+#sib-container input.input::placeholder {
+  color: #888 !important;
+  -webkit-text-fill-color: #888 !important;
+}
+#sib-container input.input:focus {
+  border-color: var(--lime) !important;
+  outline: none !important;
+  color: #f0f0f0 !important;
+  -webkit-text-fill-color: #f0f0f0 !important;
+}
+.entry__error {
+  display: none !important;
+}
+.sib-form-message-panel {
+  max-width: 100% !important;
+}
+#error-message {
+  display: none !important;
+}
+
 </style>
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <div class="sib-form">
