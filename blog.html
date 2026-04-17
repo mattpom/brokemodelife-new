@@ -1124,10 +1124,31 @@ body { overflow-x: hidden; max-width: 100vw; }
 
 <div class="main-content">
 
-  <!-- BML ORIGINAL ARTICLES -->
+  <!-- AI WEEKLY INSIGHT -->
   <div style="margin-bottom:3rem">
-    <p class="section-label">Broke Mode Guides</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Original Articles</h2>
+    <p class="section-label">AI Editorial — Refreshes Every Visit</p>
+    <h2 class="section-title">This Week in Budget Living</h2>
+    <button class="btn-refresh" onclick="refreshBlogAI()">↻ New Insight</button>
+    <div id="blog-ai"></div>
+  </div>
+
+  <!-- LIVE RSS FEED -->
+  <div class="feed-header">
+    <div>
+      <p class="section-label">Live from the Web</p>
+      <h2 class="section-title">Latest Articles</h2>
+    </div>
+    <div>
+      <p class="feed-meta">Sources: <span>Penny Hoarder · Frugalwoods · Budget Bytes · Making Sense of Cents</span></p>
+      <button class="btn-refresh" style="margin-top:0.8rem" onclick="loadBlogFeed('rss-feed', 12)">↻ Reload Feed</button>
+    </div>
+  </div>
+  <div id="rss-feed"></div>
+
+  <!-- BML ORIGINAL ARTICLES -->
+  <div style="margin-bottom:3rem;margin-top:2rem">
+    <p class="section-label">Broke Mode Originals</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Written by BML</h2>
     <div class="blog-grid">
       <a class="blog-card" href="how-to-eat-on-50-dollars-a-week.html">
         <span class="blog-source">Food &amp; Grocery</span>
@@ -1181,27 +1202,6 @@ body { overflow-x: hidden; max-width: 100vw; }
       </a>
     </div>
   </div>
-
-  <!-- AI WEEKLY INSIGHT -->
-  <div style="margin-bottom:3rem">
-    <p class="section-label">AI Editorial — Refreshes Every Visit</p>
-    <h2 class="section-title">This Week in Budget Living</h2>
-    <button class="btn-refresh" onclick="refreshBlogAI()">↻ New Insight</button>
-    <div id="blog-ai"></div>
-  </div>
-
-  <!-- LIVE RSS FEED -->
-  <div class="feed-header">
-    <div>
-      <p class="section-label">Live from the Web</p>
-      <h2 class="section-title">Latest Articles</h2>
-    </div>
-    <div>
-      <p class="feed-meta">Sources: <span>Penny Hoarder · Frugalwoods · Budget Bytes · Making Sense of Cents</span></p>
-      <button class="btn-refresh" style="margin-top:0.8rem" onclick="loadBlogFeed('rss-feed', 12)">↻ Reload Feed</button>
-    </div>
-  </div>
-  <div id="rss-feed"></div>
 
 <div style="margin-bottom:3rem">
   <p class="section-label">Broke Mode Picks</p>
