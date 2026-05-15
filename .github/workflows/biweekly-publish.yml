@@ -29,9 +29,33 @@ jobs:
           TODAY=$(date +"%B %-d, %Y")
           TODAY_ISO=$(date +"%Y-%m-%d")
           echo "Publishing: $DRAFT_NAME | $TITLE | $TODAY"
+          # Update blog.html - inject new blog-card at top of BML Originals blog-grid
           if [ -f blog.html ]; then
             NEW_CARD="          <a class=\"blog-card\" href=\"$DRAFT_NAME\"><span class=\"blog-source\">BML Original<\/span><span class=\"blog-title\">$TITLE<\/span><span class=\"blog-desc\">Published $TODAY<\/span><\/a>"
             sed -i "s|class=\"blog-grid\"|class=\"blog-grid\">\n$NEW_CARD\n<!--BLOGGRID|" blog.html
+          fi
+          # Update sitemap.xml - insert new URL before closing tag
+          if [ -f sitemap.xml ]; then
+            NEW_URL="  <url>\n    <loc>https:\/\/brokemodelife.com\/$DRAFT_NAME<\/loc>\n    <changefreq>monthly<\/changefreq>\n    <priority>0.9<\/priority>\n  <\/url>"
+            sed -i "s|<\/urlset>|$NEW_URL\n<\/urlset>|" sitemap.xml
+          fi
+          # Update or create feed.xml RSS feed
+          FEED_ENTRY="    <item>\n      <title>$TITLE<\/title>\n      <link>https:\/\/brokemodelife.com\/$DRAFT_NAME<\/link>\n      <pubDate>$(date -R)<\/pubDate>\n      <guid>https:\/\/brokemodelife.com\/$DRAFT_NAME<\/guid>\n    <\/item>"
+          if [ -f feed.xml ]; then
+            sed -i "s|<\/channel>|$FEED_ENTRY\n  <\/channel>|" feed.xml
+          else
+            cat > feed.xml << FEEDEOF
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Broke Mode Life — Budget Living Articles</title>
+    <link>https://brokemodelife.com</link>
+    <description>Live large on a lean budget. Real tips, real deals, zero fluff.</description>
+    <language>en-us</language>
+$FEED_ENTRY
+  </channel>
+</rss>
+FEEDEOF
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
