@@ -44,18 +44,9 @@ jobs:
           if [ -f feed.xml ]; then
             sed -i "s|<\/channel>|$FEED_ENTRY\n  <\/channel>|" feed.xml
           else
-            cat > feed.xml << FEEDEOF
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>Broke Mode Life — Budget Living Articles</title>
-    <link>https://brokemodelife.com</link>
-    <description>Live large on a lean budget. Real tips, real deals, zero fluff.</description>
-    <language>en-us</language>
-$FEED_ENTRY
-  </channel>
-</rss>
-FEEDEOF
+            printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>' '<rss version="2.0">' '  <channel>' '    <title>Broke Mode Life — Budget Living Articles</title>' '    <link>https://brokemodelife.com</link>' '    <description>Live large on a lean budget. Real tips, real deals, zero fluff.</description>' '    <language>en-us</language>' > feed.xml
+            echo "$FEED_ENTRY" >> feed.xml
+            printf '%s\n' '  </channel>' '</rss>' >> feed.xml
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
