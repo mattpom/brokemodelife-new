@@ -1,0 +1,40 @@
+name: Bi-Weekly Content Publisher
+
+on:
+  schedule:
+    - cron: '0 9 * * 4/14'
+  workflow_dispatch:
+
+jobs:
+  publish-draft:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find and publish draft
+        run: |
+          if ! ls _drafts/*.html > /dev/null 2>&1; then
+            echo "::warning::No drafts found in _drafts/ - add next article before scheduled run"
+            exit 0
+          fi
+          DRAFT=$(ls _drafts/*.html | sort | head -1)
+          DRAFT_NAME=$(basename "$DRAFT")
+          cp "$DRAFT" "$DRAFT_NAME"
+          rm "$DRAFT"
+          TITLE=$(grep -oP '(?<=<title>)[^<]+' "$DRAFT_NAME" | sed "s/ — Broke.*//")
+          TODAY=$(date +"%B %-d, %Y")
+          TODAY_ISO=$(date +"%Y-%m-%d")
+          echo "Publishing: $DRAFT_NAME | $TITLE | $TODAY"
+          if [ -f blog.html ]; then
+            NEW_CARD="          <a class=\"blog-card\" href=\"$DRAFT_NAME\"><span class=\"blog-source\">BML Original<\/span><span class=\"blog-title\">$TITLE<\/span><span class=\"blog-desc\">Published $TODAY<\/span><\/a>"
+            sed -i "s|class=\"blog-grid\"|class=\"blog-grid\">\n$NEW_CARD\n<!--BLOGGRID|" blog.html
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Bi-weekly publish: $DRAFT_NAME [$TODAY_ISO]"
+          git push
