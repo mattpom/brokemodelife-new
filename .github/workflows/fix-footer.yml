@@ -3,35 +3,34 @@ on:
   workflow_dispatch:
 jobs:
   fix-footer:
-      runs-on: ubuntu-latest
-      permissions:
-          contents: write
-            steps:
-                          - uses: actions/checkout@v4
-                                - name: Fix footers
-                                        run: |
-                                                  python3 << 'PYEOF'
-                                                            import re, os
-                                                                      for fn in os.listdir('.'):
-                                                                                  if not fn.endswith('.html') or fn == 'index.html':
-                                                                                                continue
-                                                                                                            with open(fn) as f:
-                                                                                                                          c = f.read()
-                                                                                                                                      if 'footer-brand' in c:
-                                                                                                                                                    continue
-                                                                                                                                                                old1 = '<footer>\n  <div class="footer-links">'
-                                                                                                                                                                            new1 = '<footer>\n  <div>\n    <div class="footer-brand">Broke Mode Life</div>\n    <div class="footer-tagline">Live Large on a Lean Budget</div>\n  </div>\n  <div class="footer-links">'
-                                                                                                                                                                                        c = c.replace(old1, new1)
-                                                                                                                                                                                                    c = re.sub(r'Reserved\.<br>\s*<a href="affiliate\.html">Affiliate Disclosure</a> &mdash; Some links earn commission at no cost to you\.', 'Reserved. Some links earn commission at no cost to you.', c)
-                                                                                                                                                                                                                with open(fn, 'w') as f:
-                                                                                                                                                                                                                              f.write(c)
-                                                                                                                                                                                                                                          print('Fixed', fn)
-                                                                                                                                                                                                                                                    PYEOF
-                                                                                                                                                                                                                                                          - name: Commit
-                                                                                                                                                                                                                                                                  run: |
-                                                                                                                                                                                                                                                                            git config user.name 'github-actions[bot]'
-                                                                                                                                                                                                                                                                                      git config user.email 'github-actions[bot]@users.noreply.github.com'
-                                                                                                                                                                                                                                                                                                git add -A
-                                                                                                                                                                                                                                                                                                          git diff --staged --quiet || git commit -m 'Fix footer sitewide: add brand/tagline, fix affiliate link'
-                                                                                                                                                                                                                                                                                                                    git push
-                                                                                                                                                                                                                                                                                                                    
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix footers
+        run: |
+          python3 << 'PYEOF'
+          import re, os
+          for fn in os.listdir('.'):
+            if not fn.endswith('.html') or fn == 'index.html':
+              continue
+            with open(fn) as f:
+              c = f.read()
+            if 'footer-brand' in c:
+              continue
+            old1 = '<footer>\n  <div class="footer-links">'
+            new1 = '<footer>\n  <div>\n    <div class="footer-brand">Broke Mode Life</div>\n    <div class="footer-tagline">Live Large on a Lean Budget</div>\n  </div>\n  <div class="footer-links">'
+            c = c.replace(old1, new1)
+            c = re.sub(r'Reserved\.<br>\s*<a href="affiliate\.html">Affiliate Disclosure</a> &mdash; Some links earn commission at no cost to you\.', 'Reserved. Some links earn commission at no cost to you.', c)
+            with open(fn, 'w') as f:
+              f.write(c)
+            print('Fixed', fn)
+          PYEOF
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --staged --quiet || git commit -m 'Fix footer sitewide: add brand/tagline, fix affiliate link'
+          git push
