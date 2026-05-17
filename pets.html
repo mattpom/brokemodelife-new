@@ -1281,13 +1281,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ── EMAIL FORM ───────────────────────────────────────────────
-function handleEmail(e) {
-  e.preventDefault();
-  const status = document.getElementById('form-status');
-  if (status) status.textContent = "✓ You're in. Welcome to Broke Mode.";
-  e.target.reset();
-}
 
 // ── CONTENT BANKS ────────────────────────────────────────────
 const CONTENT_BANKS = {
@@ -1518,48 +1511,27 @@ function renderAIContent(container, data, topic) {
 // STATIC BLOG ARTICLES — Always loads, never fails
 const STATIC_ARTICLES = [
   { source:'The Penny Hoarder', title:'25 Legit Ways to Make Extra Money This Month', link:'https://www.thepennyhoarder.com/make-money/', desc:'Side hustles, gig work, and smart money moves that actually pay off this month.' },
-  { source:'Budget Bytes', title:'How to Meal Prep for the Week for Under $50', link:'https://www.budgetbytes.com/category/recipes/meal-prep/', desc:'Batch cooking saves time and money. Stock your fridge with a full week of meals.' },
-  { source:'Frugalwoods', title:'The Simple Framework for Spending Less Without Feeling Deprived', link:'https://www.frugalwoods.com/', desc:'Frugality is not about deprivation. It is about intentionality and getting more from what you already have.' },
-  { source:'Making Sense of Cents', title:'How to Save Money Every Single Month', link:'https://www.makingsenseofcents.com/category/save-money/', desc:'Practical money saving strategies that work regardless of income level.' },
   { source:'The Penny Hoarder', title:'Best Cashback Apps That Actually Pay You Back', link:'https://www.thepennyhoarder.com/save-money/cashback-apps/', desc:'Ibotta, Rakuten, and others put real cash back in your pocket on purchases you were already making.' },
-  { source:'Budget Bytes', title:'10 Dinners Under $2 Per Serving', link:'https://www.budgetbytes.com/', desc:'Eating well on a tight budget is completely doable. These recipes prove you do not have to sacrifice taste.' },
-  { source:'Frugalwoods', title:'Why We Track Every Dollar We Spend', link:'https://www.frugalwoods.com/', desc:'You cannot manage what you do not measure. Tracking spending is the foundation of every financial win.' },
-  { source:'Making Sense of Cents', title:'The Best Side Hustles to Start This Year', link:'https://www.makingsenseofcents.com/category/make-money/', desc:'Proven ways to earn extra income that fit around your existing schedule.' },
   { source:'The Penny Hoarder', title:'How to Build an Emergency Fund When You Have No Extra Money', link:'https://www.thepennyhoarder.com/save-money/emergency-fund/', desc:'Starting small is infinitely better than not starting. Here is how to build your safety net.' },
+  { source:'The Penny Hoarder', title:'How to Save Money on Groceries Every Week', link:'https://www.thepennyhoarder.com/save-money/how-to-save-money-on-groceries/', desc:'Real strategies that cut your grocery bill without giving up the food you actually want to eat.' },
+  { source:'Budget Bytes', title:'How to Meal Prep for the Week for Under $50', link:'https://www.budgetbytes.com/category/recipes/meal-prep/', desc:'Batch cooking saves time and money. Stock your fridge with a full week of meals.' },
+  { source:'Budget Bytes', title:'How to Make the Most of Your Grocery Budget', link:'https://www.budgetbytes.com/how-to-make-the-most-of-your-grocery-budget/', desc:'Smart shopping strategies that stretch every dollar at the grocery store without sacrificing quality.' },
+  { source:'Budget Bytes', title:'10 Dinners Under $2 Per Serving', link:'https://www.budgetbytes.com/category/extra-bytes/budget-tips/', desc:'Eating well on a tight budget is completely doable. These recipes prove you do not have to sacrifice taste.' },
+  { source:'Frugalwoods', title:'The Simple Framework for Spending Less Without Feeling Deprived', link:'https://www.frugalwoods.com/2015/08/28/we-never-deprive-ourselves/', desc:'Frugality is not about deprivation. It is about intentionality and getting more from what you already have.' },
+  { source:'Frugalwoods', title:'Why We Track Every Dollar We Spend', link:'https://www.frugalwoods.com/2014/10/31/you-must-track-your-spending/', desc:'You cannot manage what you do not measure. Tracking spending is the foundation of every financial win.' },
+  { source:'Frugalwoods', title:'How to Stop Lifestyle Inflation From Ruining Your Finances', link:'https://www.frugalwoods.com/2015/03/20/lifestyle-inflation-is-a-thief/', desc:'Earning more should not automatically mean spending more. Here is how to break the cycle.' },
+  { source:'Making Sense of Cents', title:'How to Save Money Every Single Month', link:'https://www.makingsenseofcents.com/2013/05/ways-to-save-money.html', desc:'Practical money saving strategies that work regardless of income level.' },
+  { source:'Making Sense of Cents', title:'The Best Side Hustles to Start This Year', link:'https://www.makingsenseofcents.com/category/make-money/', desc:'Proven ways to earn extra income that fit around your existing schedule.' },
+  { source:'NerdWallet', title:'How to Create a Budget in 5 Steps', link:'https://www.nerdwallet.com/article/finance/how-to-budget', desc:'A straightforward budgeting guide that works whether you are starting from zero or trying to improve.' },
+  { source:'NerdWallet', title:'How to Pay Off Debt: Strategies That Work', link:'https://www.nerdwallet.com/article/finance/pay-off-debt', desc:'The debt snowball vs. avalanche methods compared — and which one is right for your situation.' },
 ];
 
-async function loadBlogFeed(containerId, maxItems) {
+function loadBlogFeed(containerId, maxItems) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  
-  container.innerHTML = '<div class="ai-loading" style="padding:2rem">Loading articles...</div>';
-  
-  let allItems = [...STATIC_ARTICLES];
-  
-  // Try to fetch live RSS — if it works, great; if not, use static
-  try {
-    const res = await Promise.race([
-      fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.thepennyhoarder.com%2Ffeed%2F&count=3'),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 4000))
-    ]);
-    const json = await res.json();
-    if (json.status === 'ok' && json.items && json.items.length > 0) {
-      const live = json.items.map(item => ({
-        source: 'The Penny Hoarder',
-        title: item.title,
-        link: item.link,
-        desc: (item.description || '').replace(/<[^>]+>/g,'').slice(0,120)
-      }));
-      allItems = [...live, ...allItems];
-    }
-  } catch(e) {
-    // Use static content — already loaded above
-  }
-  
-  // Shuffle and limit
-  allItems.sort(() => Math.random() - 0.5);
-  const shown = allItems.slice(0, maxItems || 9);
-  
+  const valid = STATIC_ARTICLES.filter(item => item.link && item.link.startsWith('http'));
+  valid.sort(() => Math.random() - 0.5);
+  const shown = valid.slice(0, maxItems || 9);
   container.innerHTML = '<div class="blog-grid">' + shown.map(item =>
     '<a class="blog-card" href="' + item.link + '" target="_blank" rel="noopener">' +
     '<span class="blog-source">' + item.source + '</span>' +

@@ -1480,13 +1480,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ── EMAIL FORM ───────────────────────────────────────────────
-function handleEmail(e) {
-  e.preventDefault();
-  const status = document.getElementById('form-status');
-  if (status) status.textContent = "✓ You're in. Welcome to Broke Mode.";
-  e.target.reset();
-}
 
 // ── CONTENT BANKS ────────────────────────────────────────────
 const CONTENT_BANKS = {
