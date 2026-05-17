@@ -1609,20 +1609,24 @@ function renderAIContent(container, data, topic) {
 
 // STATIC BLOG ARTICLES — Always loads, never fails
 const STATIC_ARTICLES = [
-  { source:'The Penny Hoarder', title:'25 Legit Ways to Make Extra Money This Month', link:'https://www.thepennyhoarder.com/make-money/', desc:'Side hustles, gig work, and smart money moves that actually pay off this month.' },
-  { source:'The Penny Hoarder', title:'Best Cashback Apps That Actually Pay You Back', link:'https://www.thepennyhoarder.com/save-money/cashback-apps/', desc:'Ibotta, Rakuten, and others put real cash back in your pocket on purchases you were already making.' },
-  { source:'The Penny Hoarder', title:'How to Build an Emergency Fund When You Have No Extra Money', link:'https://www.thepennyhoarder.com/save-money/emergency-fund/', desc:'Starting small is infinitely better than not starting. Here is how to build your safety net.' },
-  { source:'The Penny Hoarder', title:'How to Save Money on Groceries Every Week', link:'https://www.thepennyhoarder.com/save-money/how-to-save-money-on-groceries/', desc:'Real strategies that cut your grocery bill without giving up the food you actually want to eat.' },
-  { source:'Budget Bytes', title:'How to Meal Prep for the Week for Under $50', link:'https://www.budgetbytes.com/category/recipes/meal-prep/', desc:'Batch cooking saves time and money. Stock your fridge with a full week of meals.' },
-  { source:'Budget Bytes', title:'How to Make the Most of Your Grocery Budget', link:'https://www.budgetbytes.com/how-to-make-the-most-of-your-grocery-budget/', desc:'Smart shopping strategies that stretch every dollar at the grocery store without sacrificing quality.' },
-  { source:'Budget Bytes', title:'10 Dinners Under $2 Per Serving', link:'https://www.budgetbytes.com/category/extra-bytes/budget-tips/', desc:'Eating well on a tight budget is completely doable. These recipes prove you do not have to sacrifice taste.' },
-  { source:'Money Under 30', title:'How to Save Money: 22 Proven Ways', link:'https://www.moneyunder30.com/how-to-save-money', desc:'Practical, no-nonsense saving strategies that work at any income level — starting this week.' },
-  { source:'Money Under 30', title:'The Best Budgeting Apps for 2025', link:'https://www.moneyunder30.com/best-budgeting-apps', desc:'Ranked by usefulness, not hype. These apps actually help you track and control spending.' },
-  { source:'The Balance', title:'How to Stop Living Paycheck to Paycheck', link:'https://www.thebalancemoney.com/how-to-stop-living-paycheck-to-paycheck-4154920', desc:'The exact steps to break the cycle — build a buffer, cut the leaks, and get ahead for real.' },
-  { source:'Making Sense of Cents', title:'How to Save Money Every Single Month', link:'https://www.makingsenseofcents.com/2013/05/ways-to-save-money.html', desc:'Practical money saving strategies that work regardless of income level.' },
-  { source:'Making Sense of Cents', title:'The Best Side Hustles to Start This Year', link:'https://www.makingsenseofcents.com/category/make-money/', desc:'Proven ways to earn extra income that fit around your existing schedule.' },
-  { source:'NerdWallet', title:'How to Create a Budget in 5 Steps', link:'https://www.nerdwallet.com/article/finance/how-to-budget', desc:'A straightforward budgeting guide that works whether you are starting from zero or trying to improve.' },
-  { source:'NerdWallet', title:'How to Pay Off Debt: Strategies That Work', link:'https://www.nerdwallet.com/article/finance/pay-off-debt', desc:'The debt snowball vs. avalanche methods compared — and which one is right for your situation.' },
+  { source:'Broke Mode Life', title:'How to Eat Well on $50 a Week', link:'how-to-eat-on-50-dollars-a-week.html', desc:'The complete broke-mode food system. Eat well, waste nothing, and keep your grocery bill under $50.' },
+  { source:'Broke Mode Life', title:'Best Cheap Meal Prep Ideas for the Week', link:'best-cheap-meal-prep-ideas.html', desc:'Four hours on Sunday saves $150+ in impulse food spending. Here is the exact system.' },
+  { source:'Broke Mode Life', title:'How to Save Money Every Month — 30 Real Tips', link:'how-to-save-money-every-month.html', desc:'30 actual money-saving moves ranked by impact. Start with the top five and feel it immediately.' },
+  { source:'Broke Mode Life', title:'Budget Travel Tips — Spend Less, See More', link:'budget-travel-tips-spend-less.html', desc:'Cheap flights, free accommodation, and the mindset shift that makes budget travel actually work.' },
+  { source:'Broke Mode Life', title:'Budget Home Gym Setup Under $100', link:'budget-home-gym-setup-under-100.html', desc:'Everything you need to train seriously at home — no monthly fee, no commute, no excuses.' },
+  { source:'Broke Mode Life', title:'27 Side Hustle Ideas That Actually Pay', link:'side-hustle-ideas-make-money.html', desc:'Ranked by effort vs. income. Some need skills, some just need a phone and free time.' },
+  { source:'Broke Mode Life', title:'How to Fix Your Credit Score — The Real Way', link:'credit-score-fix-guide.html', desc:'No scams, no credit repair companies. Just the five factors and exactly what moves the needle.' },
+  { source:'Broke Mode Life', title:'Zero-Based Budgeting — The Broke Mode Way', link:'how-to-budget-broke-mode.html', desc:'Tell every dollar where to go before the month starts. Simple system, actually works.' },
+  { source:'Broke Mode Life', title:'Free Things to Do This Weekend', link:'free-things-to-do-this-weekend.html', desc:'A full weekend of fun without spending a dollar. Real activities, not boring suggestions.' },
+  { source:'Broke Mode Life', title:'Best Free Music Streaming Apps', link:'best-free-music-streaming-apps.html', desc:'The best free streaming apps compared — so you never have to pay for music again.' },
+  { source:'The Penny Hoarder', title:'Ways to Make Extra Money This Month', link:'https://www.thepennyhoarder.com/make-money/', desc:'Side hustles, gig work, and smart money moves that actually pay off this month.' },
+  { source:'The Penny Hoarder', title:'Smart Ways to Save Money', link:'https://www.thepennyhoarder.com/save-money/', desc:'Real strategies to cut spending and keep more of what you earn every month.' },
+  { source:'Budget Bytes', title:'Budget-Friendly Meal Prep Recipes', link:'https://www.budgetbytes.com/category/recipes/meal-prep/', desc:'Batch cooking saves time and money. Stock your fridge with a full week of meals.' },
+  { source:'Budget Bytes', title:'Budget Cooking Tips and Strategies', link:'https://www.budgetbytes.com/category/extra-bytes/budget-tips/', desc:'Eating well on a tight budget is completely doable. These tips prove it.' },
+  { source:'NerdWallet', title:'How to Build a Budget That Works', link:'https://www.nerdwallet.com/article/finance/how-to-budget', desc:'A straightforward budgeting guide whether you are starting from zero or trying to improve.' },
+  { source:'NerdWallet', title:'Best High-Yield Savings Accounts', link:'https://www.nerdwallet.com/best/banking/high-yield-online-savings-accounts', desc:'The best savings rates right now — ranked by APY, fees, and account requirements.' },
+  { source:'Making Sense of Cents', title:'Ways to Save Money Every Month', link:'https://www.makingsenseofcents.com/category/save-money/', desc:'Practical money saving strategies that work regardless of income level.' },
+  { source:'Making Sense of Cents', title:'Best Side Hustles to Start Now', link:'https://www.makingsenseofcents.com/category/make-money/', desc:'Proven ways to earn extra income that fit around your existing schedule.' },
 ];
 
 function loadBlogFeed(containerId, maxItems) {
