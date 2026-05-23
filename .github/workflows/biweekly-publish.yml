@@ -1,8 +1,10 @@
-name: Bi-Weekly Content Publisher
+name: BML Content Publisher
 
 on:
   schedule:
     - cron: '0 9 * * 4/14'
+    - cron: '0 13 * * *'
+    - cron: '0 22 * * *'
   workflow_dispatch:
 
 jobs:
@@ -54,7 +56,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Generate and post to Buffer
+      - name: Post to Buffer
         env:
           ANTHROPIC_KEY: ${{ secrets.ANTHROPIC_KEY }}
           BUFFER_TOKEN: ${{ secrets.BUFFER_TOKEN }}

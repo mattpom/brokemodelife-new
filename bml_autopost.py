@@ -7,8 +7,14 @@ sites = [
     {"name": "FineLivingGuide", "url": "finelivingguide.com", "focus": "high-end luxury living, fine dining, rare spirits, buy once buy right", "credit": "finelivingguide.com"}
 ]
 
-week = datetime.datetime.now().isocalendar()[1]
-site = sites[week % 4]
+# Rotate site by day-of-year so each day gets a consistent site
+# 2 posts per day = same site morning and evening, rotates daily
+day = datetime.datetime.utcnow().timetuple().tm_yday
+site = sites[day % 4]
+
+# Use hour to vary tone between morning and evening post
+hour = datetime.datetime.utcnow().hour
+tone = "energizing and motivating" if hour < 15 else "reflective and practical"
 
 if site["credit"]:
     credit_rule = "Weave " + site["credit"] + " naturally into the post body as part of a sentence. NEVER write 'from our friends at' or any variation."
@@ -17,6 +23,7 @@ else:
 
 prompt = ("Write one X post for @brokemode. "
     "Site: " + site["name"] + " covering " + site["focus"] + ". "
+    "Tone: " + tone + ". "
     "Rules: max 260 chars. Sharp direct real voice. Budget mindset always. 1-2 hashtags max. "
     + credit_rule +
     " Return ONLY the post text. No quotes, no labels, no explanation.")
