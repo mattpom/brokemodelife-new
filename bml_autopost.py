@@ -44,6 +44,8 @@ text = text_blocks[0].strip() if text_blocks else ""
 # Strip any leading punctuation Claude might accidentally prepend (quotes, dashes, etc.)
 # Use lstrip of specific chars only — avoids chopping emoji or first word letters
 text = text.lstrip('"\'\u201c\u201d`~-_*# \t\n').strip()
+# Remove lone surrogates that would break JSON encoding
+text = text.encode('utf-16', 'surrogatepass').decode('utf-16', 'ignore')
 
 if not text:
             print("ERROR: empty post")
