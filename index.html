@@ -154,11 +154,23 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
     </div>
   </div>
 </section>
+<section style="padding:4rem 2.5rem;background:var(--black);border-top:1px solid var(--border)">
+<div style="max-width:1100px;margin:0 auto">
+<p class="section-label">Where Do You Want to Start?</p>
+<h2 class="section-title">Pick Your Biggest <span style="color:var(--lime)">Money Problem.</span></h2>
+<p style="color:var(--muted);font-size:0.9rem;margin-bottom:2rem">Pick the one that hits hardest right now.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)">
+<a href="all_you_can_eat.html" style="background:var(--card-bg);padding:1.8rem 1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.2s" onmouseover="this.style.background='#1e1e1e'" onmouseout="this.style.background='var(--card-bg)'"><span style="font-size:1.7rem">🍽️</span><span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--white)">Food costs too much</span><span style="font-size:0.82rem;color:#888">Meal hacks &amp; grocery wins</span></a>
+<a href="finance.html" style="background:var(--card-bg);padding:1.8rem 1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.2s" onmouseover="this.style.background='#1e1e1e'" onmouseout="this.style.background='var(--card-bg)'"><span style="font-size:1.7rem">💰</span><span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--white)">Money keeps disappearing</span><span style="font-size:0.82rem;color:#888">Budget &amp; savings strategy</span></a>
+<a href="freestuff.html" style="background:var(--card-bg);padding:1.8rem 1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.2s" onmouseover="this.style.background='#1e1e1e'" onmouseout="this.style.background='var(--card-bg)'"><span style="font-size:1.7rem">🎁</span><span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--white)">I want free stuff</span><span style="font-size:0.82rem;color:#888">Freebies &amp; no-cost deals</span></a>
+<a href="travel.html" style="background:var(--card-bg);padding:1.8rem 1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.2s" onmouseover="this.style.background='#1e1e1e'" onmouseout="this.style.background='var(--card-bg)'"><span style="font-size:1.7rem">✈️</span><span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--white)">I want to travel cheap</span><span style="font-size:0.82rem;color:#888">Flights, trips &amp; lodging hacks</span></a>
+<a href="shop.html" style="background:var(--card-bg);padding:1.8rem 1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.2s" onmouseover="this.style.background='#1e1e1e'" onmouseout="this.style.background='var(--card-bg)'"><span style="font-size:1.7rem">📦</span><span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--white)">I need to buy something</span><span style="font-size:0.82rem;color:#888">Vetted broke-mode picks</span></a>
+</div></div></section>
 <section style="padding:5rem 2.5rem;background:var(--off-black)">
   <div style="max-width:900px;margin:0 auto">
-    <p class="section-label">Today's Broke Mode Tips</p>
-    <h2 class="section-title">Fresh Advice, <span style="color:var(--lime)">Every Visit</span></h2>
-    <button class="btn-refresh" onclick="refreshHomeTip()">↻ Refresh Tips</button>
+    <p class="section-label">Today's Broke Mode Pick</p>
+    <h2 class="section-title">Your Daily Pick, <span style="color:var(--lime)">Every Day</span></h2>
+    <button class="btn-refresh" onclick="refreshHomeTip()">↻ New Tip</button>
     <div id="home-ai-tips"></div>
   </div>
 </section>
@@ -196,8 +208,8 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
   </div>
 </section>
 <section class="email-strip" id="email-section">
-  <h2>Join the Broke Mode List</h2>
-  <p>Get weekly budget moves, cheap finds, free resources, and practical ways to spend less without making life miserable. Free forever.</p>
+  <h2>New Tips Every Monday.</h2>
+  <p>Every Monday: 5 budget moves, 1 freebie, and the week's best deal. Free forever. 3,000+ broke-mode lifers already on the list.</p>
   <form class="email-form" action="https://179420ee.sibforms.com/serve/MUIFAFFWYcVQlpxFP2jX2rwdLqN2mTgNrN871GxiWiz06yv0YFpzg6h7T4XCp-Gdz_g_O4XwFbIKqi9R_VIXj4Ln05-zxpsA0kg0-zewj7MLIDZTv_J8D6MfL5y5kNdOxfdlGtKihit6eWD7JI3j8LAMz-gD4XHqvvGdyXw956jAknm13oWHgu9jnj21Umr4_k6CDi7m_ekVlqAMvA==" method="POST" target="_blank">
     <input type="email" name="EMAIL" placeholder="your@email.com" required autocomplete="email">
     <input type="text" name="email_address_check" value="" style="display:none">
@@ -240,9 +252,9 @@ const STATIC_ARTICLES=[
   {source:'NerdWallet',title:'How to Build a Budget That Works',link:'https://www.nerdwallet.com/article/finance/how-to-budget',desc:'A straightforward budgeting guide whether starting from zero or improving.'}
 ];
 function loadBlogFeed(id,max){const c=document.getElementById(id);if(!c)return;const valid=STATIC_ARTICLES.filter(i=>i.link&&i.link.startsWith('http'));valid.sort(()=>Math.random()-0.5);const shown=valid.slice(0,max||6);c.innerHTML='<div class="blog-grid">'+shown.map(i=>'<a class="blog-card" href="'+i.link+'" target="_blank" rel="noopener"><span class="blog-source">'+i.source+'</span><span class="blog-title">'+i.title+'</span><span class="blog-desc">'+i.desc+'</span></a>').join('')+'</div>';}
-const TIPS=[{title:"Today's Broke Mode Power Moves",intro:"Five things that cost nothing but pay big.",items:[{title:"Audit subscriptions",desc:"Cancel anything unused in 30 days — that's $20–$80/month back instantly."},{title:"Meal prep today",desc:"Four hours once a week eliminates $150+ in impulse food spending."},{title:"Use your library card",desc:"Free books, audiobooks, movies, and museum passes."},{title:"Stack cashback apps",desc:"Rakuten + Ibotta + store app = triple dipping on every purchase."},{title:"Call and negotiate",desc:"Internet, insurance, phone — one 10-minute call saves $30/month average."}],tip:"The best financial move is the one you actually make today."}];
+const TIPS=[{title:"Today's Broke Mode Power Moves",intro:"Five things that cost nothing but pay big.",items:[{title:"Audit subscriptions",desc:"Cancel anything unused in 30 days — that's $20–$80/month back instantly."},{title:"Meal prep today",desc:"Four hours once a week eliminates $150+ in impulse food spending."},{title:"Use your library card",desc:"Free books, audiobooks, movies, and museum passes."},{title:"Stack cashback apps",desc:"Rakuten + Ibotta + store app = triple dipping on every purchase."},{title:"Call and negotiate",desc:"Internet, insurance, phone — one 10-minute call saves $30/month average."}],tip:"New tip drops every day. Come back tomorrow."}];
 function renderTip(data){const c=document.getElementById('home-ai-tips');if(!c)return;c.innerHTML='<div class="ai-block"><span class="ai-badge">✦ Fresh Pick</span><h3>'+data.title+'</h3><p>'+data.intro+'</p><ul style="margin:1rem 0;padding-left:1.2rem">'+data.items.map(i=>'<li style="margin-bottom:0.8rem"><strong style="color:var(--white)">'+i.title+'</strong> — '+i.desc+'</li>').join('')+'</ul><p style="color:var(--lime);margin-top:1.2rem">💡 '+data.tip+'</p></div>';}
-function refreshHomeTip(){renderTip(TIPS[Math.floor(Math.random()*TIPS.length)]);}
+function refreshHomeTip(){renderTip(TIPS[Math.floor(Date.now()/86400000)%TIPS.length]);}
 document.addEventListener('DOMContentLoaded',()=>{refreshHomeTip();loadBlogFeed('home-blog-feed',6);});
 </script>
 </body>
