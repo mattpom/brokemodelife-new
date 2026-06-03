@@ -25,19 +25,8 @@
   <meta name="twitter:image" content="https://brokemodelife.com/og-image.png">
   <!-- Schema.org -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Blog — Latest Budget Living Articles | Broke Mode Life",
-    "description": "Fresh articles from the best budget, frugal, and smart-money sources on the web. Updated every visit.",
-    "url": "https://brokemodelife.com/blog.html",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Broke Mode Life",
-      "url": "https://brokemodelife.com"
-    }
-  }
-  </script>
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Blog — Broke Mode Life","description":"Budget tips, cheap eats, free stuff, budget travel, finance hacks and broke-mode picks from Broke Mode Life.","url":"https://brokemodelife.com/blog.html","publisher":{"@type":"Organization","name":"Broke Mode Life","url":"https://brokemodelife.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://brokemodelife.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://brokemodelife.com/blog.html"}]}}
+</script>
 <meta name="description" content="The latest in budget living, frugal tips, and smart money moves — curated fresh every visit.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -1145,6 +1134,25 @@ body { overflow-x: hidden; max-width: 100vw; }
 <!-- Google AdSense ad unit will go here after approval -->
 </div>
 
+<div style="background:var(--off-black);border-bottom:1px solid var(--border);padding:1.2rem 2.5rem" id="search-section">
+<div style="max-width:1200px;margin:0 auto;display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap">
+<div style="flex:1;min-width:200px;position:relative">
+<input type="search" id="blog-search" placeholder="Search articles, tips, guides..." autocomplete="off"
+  style="width:100%;background:var(--dark);border:1px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;letter-spacing:0.04em;padding:0.7rem 1rem 0.7rem 2.5rem;border-radius:2px;outline:none;transition:border-color 0.2s"
+  oninput="filterBlogPosts(this.value)" onfocus="this.style.borderColor='var(--lime)'" onblur="this.style.borderColor='var(--border)'">
+<span style="position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:0.9rem;pointer-events:none">⌕</span>
+</div>
+<div style="display:flex;gap:0.5rem;flex-wrap:wrap" id="tag-filters">
+<button onclick="filterByTag('')" class="tag-btn tag-active" style="background:var(--lime);color:var(--black);border:none;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;cursor:pointer">All</button>
+<button onclick="filterByTag('food')" class="tag-btn" style="background:transparent;color:var(--muted);border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;cursor:pointer">Food</button>
+<button onclick="filterByTag('finance')" class="tag-btn" style="background:transparent;color:var(--muted);border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;cursor:pointer">Finance</button>
+<button onclick="filterByTag('travel')" class="tag-btn" style="background:transparent;color:var(--muted);border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;cursor:pointer">Travel</button>
+<button onclick="filterByTag('free')" class="tag-btn" style="background:transparent;color:var(--muted);border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;cursor:pointer">Free Stuff</button>
+<button onclick="filterByTag('health')" class="tag-btn" style="background:transparent;color:var(--muted);border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;cursor:pointer">Health</button>
+</div>
+<div id="search-count" style="font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap"></div>
+</div>
+</div>
 <div class="main-content">
 
   <!-- AI WEEKLY INSIGHT -->
@@ -1307,6 +1315,67 @@ body { overflow-x: hidden; max-width: 100vw; }
    ============================================================ */
 
 // ── NAV TOGGLE ──────────────────────────────────────────────
+
+// ── SEARCH & FILTER ENGINE ──────────────────────────────────
+let _allCards = [];
+let _currentTag = '';
+let _currentQuery = '';
+
+function initSearch() {
+  _allCards = Array.from(document.querySelectorAll('.blog-card, [data-article]'));
+  // Try to read ?q= from URL
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q');
+  if (q) {
+    const input = document.getElementById('blog-search');
+    if (input) { input.value = q; }
+    filterBlogPosts(q);
+    const searchSection = document.getElementById('search-section');
+    if (searchSection) searchSection.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  updateCount();
+}
+
+function filterBlogPosts(query) {
+  _currentQuery = (query || '').toLowerCase().trim();
+  applyFilters();
+}
+
+function filterByTag(tag) {
+  _currentTag = tag;
+  // Update button styles
+  document.querySelectorAll('.tag-btn').forEach(btn => {
+    const isActive = btn.getAttribute('onclick').includes("'" + tag + "'");
+    btn.style.background = isActive ? 'var(--lime)' : 'transparent';
+    btn.style.color = isActive ? 'var(--black)' : 'var(--muted)';
+    btn.style.border = isActive ? 'none' : '1px solid var(--border)';
+  });
+  applyFilters();
+}
+
+function applyFilters() {
+  const cards = Array.from(document.querySelectorAll('.blog-card'));
+  let visibleCount = 0;
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const tag = (card.dataset.tag || '').toLowerCase();
+    const matchesQuery = !_currentQuery || text.includes(_currentQuery);
+    const matchesTag = !_currentTag || tag.includes(_currentTag) || text.includes(_currentTag);
+    const show = matchesQuery && matchesTag;
+    card.style.display = show ? '' : 'none';
+    if (show) visibleCount++;
+  });
+  updateCount(visibleCount);
+}
+
+function updateCount(count) {
+  const el = document.getElementById('search-count');
+  if (!el) return;
+  const total = document.querySelectorAll('.blog-card').length;
+  if (count === undefined) count = total;
+  el.textContent = count === total ? total + ' articles' : count + ' of ' + total + ' articles';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const links  = document.querySelector('.nav-links');
@@ -1315,7 +1384,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close menu when any link is clicked
     links.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => links.classList.remove('open'));
-    });
+    initSearch();
+});
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!toggle.contains(e.target) && !links.contains(e.target)) {
