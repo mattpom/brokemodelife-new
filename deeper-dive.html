@@ -29,12 +29,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .section h3{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--lime);margin:1.6rem 0 0.6rem}
 .section p{font-size:0.95rem;color:#aaa;line-height:1.75;margin-bottom:1rem}
 .section .source-note{font-size:0.8rem;color:var(--stone);font-style:italic;margin-top:1.5rem}
-.featured-card{display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--lime);padding:1.8rem 2rem;text-decoration:none;color:inherit;transition:border-color 0.2s,background 0.2s;border-radius:2px}
+.featured-card{display:block;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--lime);padding:1.8rem 2rem;text-decoration:none;color:inherit;transition:border-color 0.2s,background 0.2s;border-radius:2px;cursor:pointer}
 .featured-card:hover{background:#1c1c1c;border-left-color:var(--lime-dim)}
 .featured-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--lime);margin-bottom:0.7rem}
 .featured-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:0.02em;color:var(--white);margin-bottom:0.7rem;line-height:1.1}
 .featured-body{font-size:0.92rem;color:#aaa;line-height:1.65;margin-bottom:0.9rem}
 .featured-link{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lime)}
+.article-hidden{display:none}
+.article-close{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lime);text-decoration:none;margin-bottom:1.2rem;cursor:pointer}
 .pin-embed-wrap{background:var(--card-bg);border:1px solid var(--border);padding:2rem;margin-top:1.5rem;min-height:200px}
 footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--lime);letter-spacing:0.05em}
@@ -74,14 +76,15 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
 </div>
 <div class="section">
 <h2>Featured</h2>
-<a class="featured-card" href="#benefits-of-budgeting">
+<a class="featured-card" href="#benefits-of-budgeting" id="benefits-of-budgeting-trigger">
 <span class="featured-tag">Finance &middot; Budgeting</span>
 <h3 class="featured-title">The Real Benefits of Budgeting (And Why the Myths Don't Hold Up)</h3>
 <p class="featured-body">A budget doesn't mean giving up everything you enjoy -- it means deciding on purpose where your money goes. Here's what the data actually says.</p>
 <span class="featured-link">Read the Story &rarr;</span>
 </a>
 </div>
-<div class="section" id="benefits-of-budgeting">
+<div class="section article-hidden" id="benefits-of-budgeting">
+<a class="article-close" id="benefits-of-budgeting-close">&larr; Back</a>
 <h2>The Real Benefits of Budgeting (And Why the Myths Don't Hold Up)</h2>
 <p>Budgeting has an image problem. Say the word out loud and most people picture spreadsheets, guilt, and a life stripped of coffee runs, dinners out, or spontaneous fun. That image is mostly fiction, and it's worth taking apart carefully, because the actual benefits of budgeting look very different from the stereotype once you examine them.</p>
 <h3>Myth: A Budget Means Giving Up Everything You Enjoy</h3>
@@ -133,5 +136,26 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
 <p class="footer-copy">&copy; Broke Mode Life 2026 -- Mattpom Digital Ventures LLC. All Rights Reserved.</p>
 </footer>
 <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+<script>
+(function(){
+var trigger=document.getElementById('benefits-of-budgeting-trigger');
+var article=document.getElementById('benefits-of-budgeting');
+var closeLink=document.getElementById('benefits-of-budgeting-close');
+if(trigger&&article){
+trigger.addEventListener('click',function(e){
+e.preventDefault();
+article.classList.remove('article-hidden');
+article.scrollIntoView({behavior:'smooth',block:'start'});
+});
+}
+if(closeLink&&article){
+closeLink.addEventListener('click',function(e){
+e.preventDefault();
+article.classList.add('article-hidden');
+trigger.scrollIntoView({behavior:'smooth',block:'start'});
+});
+}
+})();
+</script>
 </body>
 </html>
