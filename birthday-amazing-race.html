@@ -1184,13 +1184,21 @@ table.race-table {
   .tier-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ── PRINT STYLES ── */
+/* ── PRINT-ONLY INSTRUCTIONS (hidden on screen) ── */
+.print-instructions { display: none; }
+
+/* ── PRINT STYLES — ONE-PAGE CHECKLIST ── */
+@page { size: letter portrait; margin: 0.35in; }
 @media print {
+  .fade-up, .fade-up-2, .fade-up-3 { animation: none !important; opacity: 1 !important; transform: none !important; }
   .no-print, nav, .marquee-wrap, .ad-zone, footer, .email-strip, .back-to-top, .x-follow-bar { display: none !important; }
-  body { background: #fff !important; color: #000 !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 12px; }
   body::before { display: none !important; }
-  .page-hero { padding: 0 0 1rem 0 !important; border: none !important; }
+  .page-hero { padding: 0 !important; border: none !important; }
   .page-hero::before { display: none !important; }
+  .page-hero h1 { font-size: 1.6rem !important; margin-bottom: 0.15rem !important; }
+  .page-hero .eyebrow { margin-bottom: 0.2rem !important; }
+  .page-hero p { display: none !important; }
   .page-hero h1, .section-title, h1, h2, h3 { color: #000 !important; -webkit-print-color-adjust: exact; }
   .page-hero p, .section-body, p { color: #222 !important; }
   .eyebrow { color: #555 !important; }
@@ -1198,13 +1206,39 @@ table.race-table {
   a { color: #000 !important; text-decoration: underline !important; }
   .rule-card, .tier-card, .disclaimer-box { background: #fff !important; border: 1px solid #999 !important; }
   .rule-num, .tier-range { color: #000 !important; }
-  .race-table th { background: #eee !important; color: #000 !important; -webkit-print-color-adjust: exact; }
-  .race-table td { background: #fff !important; color: #000 !important; border-bottom: 1px solid #ccc !important; }
+  .tier-card { padding: 0.7rem 0.5rem !important; }
+  .tier-card .tier-emoji { font-size: 1.4rem !important; margin-bottom: 0.2rem !important; }
+  .tier-card .tier-range { font-size: 1.1rem !important; margin-bottom: 0.1rem !important; }
+  .tier-card .tier-name { color: #000 !important; font-size: 0.68rem !important; }
+  .tier-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 0.5rem !important; margin-bottom: 0.6rem !important; }
+  .disclaimer-box { color: #333 !important; font-size: 0.72rem !important; padding: 0.6rem 0.9rem !important; margin-bottom: 0.4rem !important; line-height: 1.4 !important; }
+  .race-table th:nth-child(3), .race-table th:nth-child(4) { text-align: center !important; white-space: nowrap !important; }
+  div[style*="margin-bottom:2rem"] { margin-bottom: 0.4rem !important; }
+  .section-title[style*="margin-bottom:1.5rem"] { margin-bottom: 0.4rem !important; }
+  .print-instructions {
+    display: block !important;
+    color: #000 !important;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    background: #f2f2f2 !important;
+    border: 1px solid #999 !important;
+    border-radius: 3px;
+    padding: 0.4rem 0.7rem;
+    margin-bottom: 0.5rem;
+    -webkit-print-color-adjust: exact;
+  }
+  .section-title { font-size: 1.3rem !important; margin-bottom: 0.15rem !important; }
+  .section-label { display: none !important; }
+  .section-body { display: none !important; }
+  .race-table th { background: #eee !important; color: #000 !important; padding: 0.22rem 0.5rem !important; font-size: 0.62rem !important; -webkit-print-color-adjust: exact; }
+  .race-table td { background: #fff !important; color: #000 !important; border-bottom: 1px solid #ccc !important; padding: 0.2rem 0.5rem !important; font-size: 0.72rem !important; }
   .race-table tr:nth-child(even) td { background: #fafafa !important; }
-  .race-table td.box-col { color: #000 !important; font-size: 1.3rem; }
-  .main-content { padding: 0.5rem 0 !important; max-width: 100% !important; }
-  .race-table-wrap { overflow: visible !important; border-color: #999 !important; }
+  .race-table td.box-col { color: #000 !important; font-size: 0.85rem !important; }
+  .main-content { padding: 0.15rem 0 !important; max-width: 100% !important; }
+  .race-table-wrap { overflow: visible !important; border-color: #999 !important; margin-bottom: 0.2rem !important; }
   table.race-table { min-width: 0 !important; }
+  table.race-table tr { page-break-inside: avoid; }
+  p[style*="margin-top:0.6rem"] { font-size: 0.65rem !important; }
 }
 </style>
   <!-- Google Analytics -->
@@ -1246,7 +1280,9 @@ table.race-table {
 
 <div class="main-content">
 
-  <div style="margin-bottom:3rem">
+  <p class="print-instructions">Print this out. Sign up for each loyalty program a week or two ahead of your birthday, then check <strong>Signed Up</strong> when the account is ready and <strong>Claimed</strong> once you've cashed in the reward.</p>
+
+  <div class="rules-grid-wrap no-print" style="margin-bottom:3rem">
     <p class="section-label">How To Play</p>
     <h2 class="section-title" style="margin-bottom:1.5rem">Three Rules. That's It.</h2>
     <div class="rules-grid">
@@ -1258,7 +1294,7 @@ table.race-table {
       <div class="rule-card">
         <div class="rule-num">02</div>
         <h4>Every Stop Counts</h4>
-        <p>This isn't pass/fail. Three stops on a work day is still a win. All fifteen makes you a legend (and possibly nauseous).</p>
+        <p>This isn't pass/fail. Three stops on a work day is still a win. All seventeen makes you a legend (and possibly nauseous).</p>
       </div>
       <div class="rule-card">
         <div class="rule-num">03</div>
@@ -1270,7 +1306,7 @@ table.race-table {
 
   <div style="margin-bottom:2rem">
     <p class="section-label">The Checklist</p>
-    <h2 class="section-title" style="margin-bottom:0.8rem">Fifteen Stops. One Day.</h2>
+    <h2 class="section-title" style="margin-bottom:0.8rem">Seventeen Stops. One Day.</h2>
     <p class="section-body" style="margin-bottom:1.5rem">Sign up for the loyalty program ahead of time, then check off each stop as you claim it. Add your own local favorites in the blank rows.</p>
     <div class="race-table-wrap">
       <table class="race-table">
@@ -1290,12 +1326,14 @@ table.race-table {
         <tr><td class="stop-name">Cinnabon Birthday Club</td><td>Free treat</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
         <tr><td class="stop-name">Buffalo Wild Wings Blazin Rewards</td><td>Free birthday reward</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
         <tr><td class="stop-name">Culver's eClub</td><td>Free treat</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
+        <tr><td class="stop-name">Jersey Mike's Shore Points</td><td>Free regular sub</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
+        <tr><td class="stop-name">Graeter's Sweet Rewards</td><td>Free scoop (regional)</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
         <tr><td class="blank-row">Your local favorite #1</td><td class="blank-row">___________________</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
         <tr><td class="blank-row">Your local favorite #2</td><td class="blank-row">___________________</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
         <tr><td class="blank-row">Your local favorite #3</td><td class="blank-row">___________________</td><td class="box-col">☐</td><td class="box-col">☐</td></tr>
       </table>
     </div>
-    <p style="font-size:0.75rem;color:var(--stone);font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.6rem">15 national chains with long-running birthday loyalty perks, plus 3 blank rows for local spots.</p>
+    <p style="font-size:0.75rem;color:var(--stone);font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.6rem">17 national and regional chains with long-running birthday loyalty perks, plus 3 blank rows for local spots.</p>
   </div>
 
   <div class="race-actions no-print">
@@ -1309,32 +1347,32 @@ table.race-table {
     <div class="tier-grid">
       <div class="tier-card">
         <div class="tier-emoji">🥉</div>
-        <div class="tier-range">1–4</div>
+        <div class="tier-range">1–5</div>
         <div class="tier-name">Rookie Racer</div>
       </div>
       <div class="tier-card">
         <div class="tier-emoji">🥈</div>
-        <div class="tier-range">5–9</div>
+        <div class="tier-range">6–10</div>
         <div class="tier-name">Seasoned Grinder</div>
       </div>
       <div class="tier-card">
         <div class="tier-emoji">🥇</div>
-        <div class="tier-range">10–13</div>
+        <div class="tier-range">11–14</div>
         <div class="tier-name">Broke Mode Champion</div>
       </div>
       <div class="tier-card">
         <div class="tier-emoji">🏆</div>
-        <div class="tier-range">14–15</div>
+        <div class="tier-range">15–17</div>
         <div class="tier-name">Legendary (& Nauseous)</div>
       </div>
     </div>
   </div>
 
-  <div class="disclaimer-box no-print">
+  <div class="disclaimer-box">
     The programs listed here are long-running birthday loyalty perks as of publish — but retailers change offers, rules, and app requirements without notice. Always confirm the current deal in the brand's own app or website before you go. This is a free tool, not a guarantee.
   </div>
 
-  <div style="margin-bottom:3rem">
+  <div class="no-print" style="margin-bottom:3rem">
     <p class="section-label">Keep The Streak Going</p>
     <h2 class="section-title" style="margin-bottom:1.5rem">More Free Stuff</h2>
     <div class="card-grid" style="grid-template-columns:repeat(3,1fr)!important;">
