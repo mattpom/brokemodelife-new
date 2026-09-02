@@ -91,6 +91,94 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
 @media(max-width:900px){#site-search-wrap{display:none!important}nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,0.98);padding:1.5rem;border-bottom:1px solid var(--border);gap:0;z-index:300}.nav-links.open li{width:100%;border-bottom:1px solid var(--border)}.nav-links.open a{display:block;padding:1rem 0.5rem;font-size:0.9rem;color:var(--white)}.nav-toggle{display:flex}.hero{grid-template-columns:1fr;padding-top:7rem}.cat-grid{grid-template-columns:repeat(2,1fr)}footer{flex-direction:column;align-items:flex-start}}
 @media(max-width:600px){.email-form{flex-direction:column}.cat-grid{grid-template-columns:1fr}}
 </style>
+
+<style id="bml-contextual-photos">
+  .bml-photo-guides {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    background: var(--border);
+    gap: 1px;
+    border-bottom: 1px solid var(--border);
+  }
+  .bml-photo-guide {
+    position: relative;
+    display: block;
+    min-height: 340px;
+    overflow: hidden;
+    color: var(--white);
+    text-decoration: none;
+    background: var(--card-bg);
+  }
+  .bml-photo-guide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: saturate(.72) contrast(1.08) brightness(.76);
+    transition: transform .45s ease, filter .3s ease;
+  }
+  .bml-photo-guide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,rgba(8,8,8,.08) 25%,rgba(8,8,8,.9) 100%);
+  }
+  .bml-photo-guide span {
+    position: absolute;
+    z-index: 1;
+    left: clamp(20px,3vw,38px);
+    right: 24px;
+    bottom: 26px;
+  }
+  .bml-photo-guide small {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--lime);
+    font-family: 'Barlow Condensed',sans-serif;
+    font-size: .7rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .bml-photo-guide strong {
+    display: block;
+    font-family: 'Bebas Neue',sans-serif;
+    font-size: clamp(2rem,3.4vw,3.5rem);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: .02em;
+  }
+  .bml-photo-guide em {
+    display: block;
+    margin-top: 15px;
+    color: rgba(255,255,255,.7);
+    font-family: 'Barlow Condensed',sans-serif;
+    font-size: .72rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .bml-photo-guide:hover img { transform: scale(1.035); filter: saturate(.92) contrast(1.08) brightness(.82); }
+  .bml-photo-credits {
+    padding: 7px 2.5rem 10px;
+    background: var(--black);
+    color: #555;
+    font-family: 'Barlow Condensed',sans-serif;
+    font-size: .62rem;
+    letter-spacing: .04em;
+    text-align: right;
+  }
+  .bml-photo-credits a { color: #777; }
+  @media(max-width:780px){
+    .bml-photo-guides{grid-template-columns:1fr}
+    .bml-photo-guide{min-height:300px}
+    .bml-photo-credits{padding:7px 18px 10px;text-align:left}
+  }
+</style>
 </head>
 <body>
 <nav>
@@ -133,6 +221,28 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
     </div>
   </div>
 </header>
+<section class="bml-photo-guides" aria-label="Popular visual guides">
+  <a class="bml-photo-guide" href="how-to-eat-on-50-dollars-a-week.html">
+    <img src="https://images.unsplash.com/photo-1543352632-5a4b24e4d2a6?auto=format&amp;fit=crop&amp;w=1400&amp;q=82" alt="Three prepared meals with rice, vegetables and beans in glass containers" width="1400" height="1000" loading="eager">
+    <span><small>Food</small><strong>Eat Well on $50 a Week</strong><em>Open the guide →</em></span>
+  </a>
+  <a class="bml-photo-guide" href="budget-travel-tips-spend-less.html">
+    <img src="https://images.unsplash.com/photo-1760909148912-1f3f45ab3f5c?auto=format&amp;fit=crop&amp;w=1400&amp;q=82" alt="Yellow travel backpack waiting on a railway station bench" width="1400" height="1000" loading="lazy">
+    <span><small>Travel</small><strong>Travel for Less</strong><em>Open the guide →</em></span>
+  </a>
+  <a class="bml-photo-guide" href="best-thrift-store-finds-tips.html">
+    <img src="https://images.unsplash.com/photo-1675537057604-cafeef78a3d6?auto=format&amp;fit=crop&amp;w=1400&amp;q=82" alt="Racks of jackets and shirts inside a community thrift store" width="1400" height="1000" loading="lazy">
+    <span><small>Style</small><strong>Shop Thrift Like a Pro</strong><em>Open the guide →</em></span>
+  </a>
+</section>
+<div class="bml-photo-credits">
+  Photos:
+  <a href="https://unsplash.com/photos/lMcRyBx4G50" target="_blank" rel="noopener">Ella Olsson</a>,
+  <a href="https://unsplash.com/photos/afU18qSLMcE" target="_blank" rel="noopener">Mikhail Mamaev</a>
+  and <a href="https://unsplash.com/photos/Qn8VH9dE7-U" target="_blank" rel="noopener">Anthony Sebbo</a> on Unsplash.
+</div>
+
+
 <div style="background:var(--off-black);border-bottom:1px solid var(--border);padding:0.9rem 2.5rem;text-align:center">
 <p style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:0.6rem">Trusted Resources We Reference</p>
 <div style="display:flex;gap:2.5rem;align-items:center;justify-content:center;flex-wrap:wrap;opacity:0.4">
