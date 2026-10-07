@@ -19,7 +19,10 @@
       destination_type:kind,
       affiliate_network:network,
       product_id:asin?asin[1]:(listing?listing[1]:''),
+      source_site:window.location.hostname,
       source_page:window.location.pathname,
+      affiliate_id:url.searchParams.get('tag')||url.searchParams.get('aid')||url.searchParams.get('partner_id')||'',
+      tracking_status:kind==='affiliate'?'identifier_present_unverified':(kind==='retailer_reference'?'missing_affiliate_identifier':'not_applicable'),
       destination_path:url.origin+url.pathname,
       link_position:link.dataset.position||link.dataset.product||'existing-link',
       transport_type:'beacon'

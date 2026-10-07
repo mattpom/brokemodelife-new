@@ -1371,7 +1371,7 @@ if (toggle) toggle.addEventListener('click', () => links.classList.toggle('open'
     document.addEventListener('submit', function(e) {
       var form = e.target;
       if (form.querySelector('input[type="email"]')) {
-        gtag('event', 'email_signup', {'form_id': form.id || form.action || 'unknown', 'page_location': window.location.pathname});
+        gtag('event', 'newsletter_signup_attempt', {'form_id': form.id || form.action || 'unknown', 'page_location': window.location.pathname});
       }
     });
     var scrollDepths = [25, 50, 75, 100], fired = {};
