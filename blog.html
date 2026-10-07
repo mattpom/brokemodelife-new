@@ -1014,7 +1014,7 @@ img { max-width: 100%; height: auto; }
   .email-strip { padding: 3rem 1.5rem !important; }
   .email-strip h2 { font-size: clamp(2rem, 8vw, 3.5rem) !important; }
   .email-form { flex-direction: column; gap: 0.6rem; }
-  
+
   .email-form button { width: 100%; padding: 0.9rem; }
 }
 
@@ -1093,6 +1093,7 @@ body { overflow-x: hidden; max-width: 100vw; }
     gtag('config', 'G-54EW67EV02');
   </script>
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="stylesheet" href="revenue-paths.css">
 </head>
 <body>
 
@@ -1101,10 +1102,10 @@ body { overflow-x: hidden; max-width: 100vw; }
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
     <li><a href="apple_a_day.html">Health</a></li>
-    
+
     <li><a href="style.html">Style</a></li>
-    
-    
+
+
     <li><a href="travel.html">Travel</a></li>
     <li><a href="finance.html">Finance</a></li>
     <li><a href="money-tools.html">Money Tools</a></li>
@@ -1240,34 +1241,10 @@ body { overflow-x: hidden; max-width: 100vw; }
   <p class="section-label">Broke Mode Picks</p>
   <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
   <div class="product-grid" style="grid-template-columns:repeat(4,1fr)!important;">
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <span class="product-cat">Planning</span>
-      <span class="product-name">Budget Planner Notebook</span>
-      <span class="product-desc">Track every dollar. The planner that turns good intentions into actual savings.</span>
-      <span class="product-price">Under $20</span>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <span class="product-cat">Books</span>
-      <span class="product-name">Money Saving Best Sellers</span>
-      <span class="product-desc">The books that actually changed how people think about money. Read one. Change everything.</span>
-      <span class="product-price">Under $15</span>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
-    <a class="product-card" href="best-meal-prep-tools-for-beginners.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <span class="product-cat">Kitchen</span>
-      <span class="product-name">Meal Prep Container Set</span>
-      <span class="product-desc">Prep once. Eat all week. The containers that make budget eating effortless.</span>
-      <span class="product-price">Under $25</span>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <span class="product-cat">Lifestyle</span>
-      <span class="product-name">Reusable Shopping Bags</span>
-      <span class="product-desc">Save money on bags. Save the planet. Win twice every grocery run.</span>
-      <span class="product-price">Under $15</span>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
+    <a class="product-card" href="shop.html" data-revenue-link="guide" data-position="current-guide"><span class="product-category overline">Buying guide</span><h3 class="product-name">Browse current buying guides</h3><p class="product-desc">Choose a specific problem, then compare the researched picks and tradeoffs.</p><span class="product-link gear-link">Read the guide</span></a>
+
+
+
   </div>
   <p style="font-size:0.7rem;color:var(--muted);margin-top:0.5rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em">As an Amazon Associate, BML earns from qualifying purchases.</p>
 </div>
@@ -1723,5 +1700,6 @@ document.addEventListener("DOMContentLoaded", function() {
   })();
   </script>
   <!-- End Enhanced GA4 Event Tracking -->
+<script src="revenue-paths.js" defer></script>
 </body>
 </html>

@@ -178,6 +178,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
   }
 </style>
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="stylesheet" href="revenue-paths.css">
 </head>
 <body>
 <nav>
@@ -185,10 +186,10 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
     <li><a href="apple_a_day.html">Health</a></li>
-    
+
     <li><a href="style.html">Style</a></li>
-    
-    
+
+
     <li><a href="travel.html">Travel</a></li>
     <li><a href="finance.html">Finance</a></li>
     <li><a href="money-tools.html">Money Tools</a></li>
@@ -198,7 +199,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
     <li><a href="blog.html">Blog</a></li>
     <li><a href="deeper-dive.html">Deeper Dive</a></li><li><a href="#email-section" class="nav-cta">Join Free</a></li>
   </ul>
-  
+
 <div style="display:flex;align-items:center;gap:0.5rem;margin-left:auto;flex-shrink:0" id="site-search-wrap"><input id="site-search" type="search" placeholder="Search tips..." autocomplete="off" style="background:var(--dark);border:1px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.06em;padding:0.35rem 0.8rem;border-radius:2px;width:130px;outline:none" onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='blog.html?q='+encodeURIComponent(this.value.trim())}"><button onclick="const v=document.getElementById('site-search').value.trim();if(v)window.location.href='blog.html?q='+encodeURIComponent(v)" style="background:var(--lime);color:var(--black);border:none;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.7rem;border-radius:2px;cursor:pointer">Go</button></div>
 <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -209,7 +210,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
       <h1 class="hero-title">Live Large.<br><span>Spend Less.</span></h1>
       <p class="hero-sub">Real tips. Real deals. Zero fluff. Everything you need to eat well, look good, travel smart, and enjoy life — all on a budget that actually works.</p>
       <div class="hero-actions">
-        <a href="#categories" class="btn-primary">Browse All Topics →</a>
+        <a href="shop.html" class="btn-primary" data-revenue-link="guide" data-position="hero">Find useful buying guides</a>
         <a href="blog.html" class="btn-ghost">Read Latest Articles</a>
       </div>
     </div>
@@ -219,7 +220,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:2.5rem;disp
       <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:4px;padding:1.8rem 1.5rem"><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--lime);line-height:1">NO</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Login Required</div></div>
     </div>
   </div>
-</header>
+</header><section class="revenue-path" aria-label="Fix one thing. Spend with a plan."><div class="revenue-inner"><h2>Fix one thing. Spend with a plan.</h2><p>Start with the problem you need to solve. Our buying guides explain the fit, the tradeoffs and what to skip.</p><div class="revenue-grid"><a class="revenue-card" href="stop-winter-drafts-on-a-budget.html" data-revenue-link="guide" data-position="homepage"><strong>Stop a winter draft</strong><span>Choose a fix for a door gap, frame gap or suitable window.</span><b>Read the guide</b></a><a class="revenue-card" href="best-meal-prep-tools-for-beginners.html" data-revenue-link="guide" data-position="homepage"><strong>Cook with fewer tools</strong><span>Compare a scale, thermometer and skillet before buying.</span><b>Read the guide</b></a><a class="revenue-card" href="money-tools.html" data-revenue-link="guide" data-position="homepage"><strong>Get your budget organized</strong><span>Find the BrokeHouseCo money planner that fits your problem.</span><b>Read the guide</b></a></div></div></section>
 <section class="bml-photo-guides" aria-label="Popular visual guides">
   <a class="bml-photo-guide" href="how-to-eat-on-50-dollars-a-week.html">
     <img src="https://images.unsplash.com/photo-1543352632-5a4b24e4d2a6?auto=format&amp;fit=crop&amp;w=1400&amp;q=82" alt="Three prepared meals with rice, vegetables and beans in glass containers" width="1400" height="1000" loading="eager">
@@ -433,5 +434,6 @@ function renderTip(data){const c=document.getElementById('home-ai-tips');if(!c)r
 function refreshHomeTip(){renderTip(TIPS[Math.floor(Date.now()/86400000)%TIPS.length]);}
 document.addEventListener('DOMContentLoaded',()=>{refreshHomeTip();loadBlogFeed('home-blog-feed',6);});
 </script>
+<script src="revenue-paths.js" defer></script>
 </body>
 </html>

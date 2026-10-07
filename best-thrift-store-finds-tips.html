@@ -963,7 +963,7 @@ img { max-width: 100%; height: auto; }
   .email-strip { padding: 3rem 1.5rem !important; }
   .email-strip h2 { font-size: clamp(2rem, 8vw, 3.5rem) !important; }
   .email-form { flex-direction: column; gap: 0.6rem; }
-  
+
   .email-form button { width: 100%; padding: 0.9rem; }
 }
 
@@ -1134,6 +1134,7 @@ body { overflow-x: hidden; max-width: 100vw; }
   }
 </style>
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="stylesheet" href="revenue-paths.css">
 </head>
 <body>
 <nav>
@@ -1141,10 +1142,10 @@ body { overflow-x: hidden; max-width: 100vw; }
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
     <li><a href="apple_a_day.html">Health</a></li>
-    
+
     <li><a href="style.html">Style</a></li>
-    
-    
+
+
     <li><a href="travel.html">Travel</a></li>
     <li><a href="finance.html">Finance</a></li>
     <li><a href="money-tools.html">Money Tools</a></li>
@@ -1215,7 +1216,7 @@ body { overflow-x: hidden; max-width: 100vw; }
       <tr><td>Books</td><td>Always &mdash; $1 each, infinite value</td><td>Damaged spines, mold smell</td></tr>
     </tbody>
   </table>
-  
+
 <!-- AdSense In-Content -->
 <div class="ad-zone ad-zone-incontent" id="ad-incontent">
   <!-- Google AdSense ad unit will go here after approval -->
@@ -1224,26 +1225,10 @@ body { overflow-x: hidden; max-width: 100vw; }
   <p class="section-label">Broke Mode Picks</p>
   <h2 class="section-title" style="margin-bottom:1.5rem">Care for Thrift Finds the Right Way</h2>
   <div class="product-grid" style="margin-bottom:1rem">
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$14</div><div class="product-name">Fabric Shaver</div>
-      <div class="product-desc">Remove pilling from sweaters and make thrift finds look brand new. Worth every cent.</div>
-      <div class="product-link">Shop Amazon &rarr;</div>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$28</div><div class="product-name">Handheld Clothes Steamer</div>
-      <div class="product-desc">Kills wrinkles and refreshes thrift store clothes without dry cleaning.</div>
-      <div class="product-link">Shop Amazon &rarr;</div>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$15</div><div class="product-name">Leather Care Kit</div>
-      <div class="product-desc">Restore thrift store leather shoes to like-new condition. $100 shoes for $10 with the right care.</div>
-      <div class="product-link">Shop Amazon &rarr;</div>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div><div class="product-name">Velvet Slim Hangers (50-pack)</div>
-      <div class="product-desc">Store your quality wardrobe right. Preserve shape and triple your closet capacity.</div>
-      <div class="product-link">Shop Amazon &rarr;</div>
-    </a>
+    <a class="product-card" href="shop.html" data-revenue-link="guide" data-position="current-guide"><span class="product-category overline">Buying guide</span><h3 class="product-name">Browse current buying guides</h3><p class="product-desc">Choose a specific problem, then compare the researched picks and tradeoffs.</p><span class="product-link gear-link">Read the guide</span></a>
+
+
+
   </div>
   <p style="font-size:0.75rem;color:var(--stone);font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-bottom:3rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
   <div style="border-left:3px solid var(--lime);padding-left:1.5rem;margin-bottom:3rem;max-width:600px">
@@ -1336,5 +1321,6 @@ if (toggle) toggle.addEventListener('click', () => links.classList.toggle('open'
   })();
   </script>
   <!-- End Enhanced GA4 Event Tracking -->
+<script src="revenue-paths.js" defer></script>
 </body>
 </html>

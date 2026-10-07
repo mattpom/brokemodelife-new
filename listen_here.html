@@ -980,7 +980,7 @@ img { max-width: 100%; height: auto; }
   .email-strip { padding: 3rem 1.5rem !important; }
   .email-strip h2 { font-size: clamp(2rem, 8vw, 3.5rem) !important; }
   .email-form { flex-direction: column; gap: 0.6rem; }
-  
+
   .email-form button { width: 100%; padding: 0.9rem; }
 }
 
@@ -1085,6 +1085,7 @@ body { overflow-x: hidden; max-width: 100vw; }
     gtag('js', new Date());
     gtag('config', 'G-54EW67EV02');
   </script>
+<link rel="stylesheet" href="revenue-paths.css">
 </head>
 <body>
 
@@ -1093,10 +1094,10 @@ body { overflow-x: hidden; max-width: 100vw; }
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
     <li><a href="apple_a_day.html">Health</a></li>
-    
+
     <li><a href="style.html">Style</a></li>
-    
-    
+
+
     <li><a href="travel.html">Travel</a></li>
     <li><a href="finance.html">Finance</a></li>
     <li><a href="money-tools.html">Money Tools</a></li>
@@ -1230,55 +1231,15 @@ body { overflow-x: hidden; max-width: 100vw; }
   <p class="section-label">Broke Mode Picks</p>
   <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
   <div class="product-grid">
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$22</div>
-      <div class="product-name">Bluetooth Earbuds Under 30</div>
-      <div class="product-desc">Great sound, surprisingly durable. The broke-mode audio essential that punches above its price.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$28</div>
-      <div class="product-name">Portable Bluetooth Speaker</div>
-      <div class="product-desc">Loud enough to fill a room. Cheap enough not to stress if it gets bumped at a party.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$16</div>
-      <div class="product-name">Phone Tripod Stand</div>
-      <div class="product-desc">Perfect for recording, Zoom calls, or hands-free anything. Under $20 and genuinely useful.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$22</div>
-      <div class="product-name">Compact Power Bank</div>
-      <div class="product-desc">Keep your phone alive anywhere. Never miss a song, podcast, or playlist again.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-  
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">Under $50</div>
-      <div class="product-name">USB Microphone Budget</div>
-      <div class="product-desc">Start a podcast for under $50. Sounds twice its price.</div>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">Under $50</div>
-      <div class="product-name">Portable Record Player</div>
-      <div class="product-desc">Full vinyl experience at a fraction of audiophile prices.</div>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">Under $10</div>
-      <div class="product-name">Earbud Cable Organizer Case</div>
-      <div class="product-desc">Stop losing earbuds and cables. Keeps everything tangle-free.</div>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
-    <a class="product-card" href="shop.html" data-retired-affiliate="true" target="_blank" rel="noopener sponsored">
-      <div class="product-price">Under $20</div>
-      <div class="product-name">White Noise Machine</div>
-      <div class="product-desc">Block distractions and sleep deeper. Essential for budget remote workers.</div>
-      <span class="product-link">Shop Amazon →</span>
-    </a>
+    <a class="product-card" href="shop.html" data-revenue-link="guide" data-position="current-guide"><span class="product-category overline">Buying guide</span><h3 class="product-name">Browse current buying guides</h3><p class="product-desc">Choose a specific problem, then compare the researched picks and tradeoffs.</p><span class="product-link gear-link">Read the guide</span></a>
+
+
+
+
+
+
+
+
   </div>
   <p style="font-size:0.75rem;color:var(--stone);font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
 </div>
@@ -1663,5 +1624,6 @@ document.addEventListener("DOMContentLoaded", function() {
   })();
   </script>
   <!-- End Enhanced GA4 Event Tracking -->
+<script src="revenue-paths.js" defer></script>
 </body>
 </html>
