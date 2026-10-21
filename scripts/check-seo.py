@@ -2,6 +2,7 @@
 """Validate static-site metadata, structured data, links and sitemap coverage."""
 from pathlib import Path
 from html.parser import HTMLParser
+from html import unescape
 from urllib.parse import urlparse, unquote
 import collections
 import json
@@ -23,6 +24,16 @@ class Page(HTMLParser):
         if tag == 'link' and a.get('rel') == 'canonical': self.canonical.append(a.get('href', ''))
         if tag == 'a': self.links.append(a.get('href', ''))
 
+def validate_articles(value, file, url, title, description):
+    if isinstance(value, list):
+        for item in value: validate_articles(item, file, url, title, description)
+    elif isinstance(value, dict):
+        if value.get('@type') in ('Article', 'BlogPosting', 'NewsArticle'):
+            for key, expected_value in (('url', url), ('headline', title), ('description', description)):
+                if value.get(key) != expected_value:
+                    errors.append(f'{file.name}: Article {key} must match this page metadata (possible copied template)')
+        for item in value.values(): validate_articles(item, file, url, title, description)
+
 errors = []; expected = set(); titles = {}; descriptions = {}
 for file in sorted(ROOT.glob('*.html')):
     source = file.read_text(); page = Page(); page.feed(source)
@@ -42,7 +53,9 @@ for file in sorted(ROOT.glob('*.html')):
     else: descriptions[desc[0]] = file.name
     if page.canonical != [url]: errors.append(f'{file.name}: canonical must be {url}')
     for script in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', source, re.S | re.I):
-        try: json.loads(script)
+        try:
+            data = json.loads(script)
+            if title and desc: validate_articles(data, file, url, unescape(title[0]).strip(), desc[0])
         except ValueError as e: errors.append(f'{file.name}: invalid structured data: {e}')
     for href in page.links:
         parsed = urlparse(href)
