@@ -1,0 +1,19 @@
+/* Amazon buying actions, scoped to product recommendations. */
+:root{--pick-accent:#c8f135;--pick-surface:#111;--pick-text:#f5f5f0;--pick-muted:#b9b9b0;--pick-border:#42463b}
+.amazon-card{min-width:0;border-radius:10px!important;border-color:var(--pick-border)!important;box-shadow:0 5px 18px #0000000b;transition:border-color .15s ease,box-shadow .15s ease!important}
+.amazon-card:hover{border-color:var(--pick-accent)!important;box-shadow:0 7px 22px #00000015}
+.amazon-card .product-desc,.amazon-card .top10-card-desc{color:var(--pick-muted)!important;font-size:.95rem!important;line-height:1.65!important}
+.amazon-card .product-price{font-family:inherit!important;font-size:.78rem!important;line-height:1.5!important;letter-spacing:.04em!important;color:var(--pick-muted)!important}
+.amazon-card .product-name,.amazon-card .top10-card-title{overflow-wrap:anywhere;line-height:1.35!important}
+.amazon-cta,a.amazon-action{display:inline-flex!important;align-items:center;justify-content:center;gap:.5rem;min-height:46px;box-sizing:border-box;padding:.7rem 1rem!important;border:1px solid var(--pick-accent)!important;border-radius:5px!important;background:var(--pick-accent)!important;color:#111!important;font:600 .88rem/1.4 system-ui,sans-serif!important;letter-spacing:normal!important;text-transform:none!important;text-decoration:none!important;text-align:center;margin-top:auto}
+a.amazon-action{margin:.35rem 0}
+.amazon-card .amazon-cta{margin-top:1rem;align-self:flex-start}
+a.amazon-card:focus-visible,a.amazon-action:focus-visible{outline:3px solid var(--pick-accent)!important;outline-offset:5px!important}
+.amazon-disclosure{color:var(--pick-muted);font:400 .9rem/1.7 system-ui,sans-serif;max-width:75ch;margin:0 0 1.5rem;padding:1rem 1.15rem;border-left:3px solid var(--pick-accent);background:var(--pick-surface)}
+.amazon-jump{display:flex;flex-wrap:wrap;gap:.65rem;margin:0 0 2rem}
+.amazon-jump a{color:var(--pick-text);border:1px solid var(--pick-border);border-radius:30px;padding:.6rem 1rem;text-decoration:none;font:600 .9rem/1.4 system-ui,sans-serif;min-height:42px}
+.amazon-jump a:hover,.amazon-jump a:focus-visible{border-color:var(--pick-accent);outline-color:var(--pick-accent)}
+[id^="amazon-section-"]{scroll-margin-top:7rem}
+.product-grid:has(.amazon-card),.gear-grid:has(.amazon-card),.top10-grid:has(.amazon-card){grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))!important;align-items:stretch}
+@media(max-width:600px){.product-grid:has(.amazon-card),.gear-grid:has(.amazon-card),.top10-grid:has(.amazon-card),.product-grid-3:has(.amazon-card),.forgot-grid:has(.amazon-card){grid-template-columns:minmax(0,1fr)!important}.amazon-card{padding:1.25rem!important}.amazon-card .amazon-cta{align-self:stretch}.amazon-disclosure{font-size:.87rem}}
+@media(prefers-reduced-motion:reduce){.amazon-card{transition:none!important;transform:none!important}}
