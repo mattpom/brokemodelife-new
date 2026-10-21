@@ -29,3 +29,21 @@
     });
   });
 })();
+
+/* PDF product recommendations: one event with the actual source and listing. */
+(function () {
+  document.addEventListener('click', function (event) {
+    var element = event.target instanceof Element ? event.target : null;
+    var link = element && element.closest('a.money-tool-link');
+    if (!link || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'money_tool_click', {
+      product_name: link.dataset.product || '',
+      listing_id: link.dataset.listing || '',
+      link_url: link.href,
+      source_site: window.location.hostname,
+      page_path: window.location.pathname,
+      link_position: link.dataset.position || 'existing-product-link',
+      transport_type: 'beacon'
+    });
+  });
+})();

@@ -1,0 +1,37 @@
+/* BrokeHouseCo PDF collection: bold, legible, and scoped to owned products. */
+a.pdf-nav-link{display:inline-flex!important;align-items:center;min-height:38px;padding:.5rem .65rem!important;background:#c8f135!important;color:#10110a!important;border-radius:3px;font-weight:800!important}
+a.pdf-nav-link:hover,a.pdf-nav-link:focus-visible{background:#fff!important;outline:2px solid #c8f135;outline-offset:3px}
+.pdf-feature{background:#c8f135;color:#10110a;border-block:2px solid #c8f135}
+.pdf-feature-inner{max-width:1240px;margin:auto;padding:3.75rem 2rem;display:grid;grid-template-columns:.85fr 1.3fr;gap:3rem;align-items:center}
+.pdf-feature .pdf-kicker,.pdf-article-pick .pdf-kicker{font:800 .75rem/1.5 'Barlow Condensed',sans-serif;letter-spacing:.13em;text-transform:uppercase;margin:0 0 .8rem;color:inherit}
+.pdf-feature h2{font:400 clamp(2.8rem,5.5vw,5rem)/.95 'Bebas Neue',sans-serif;letter-spacing:.01em;color:#10110a;margin:0 0 1.3rem;text-transform:uppercase}
+.pdf-feature h2 em{font-style:normal}
+.pdf-feature-copy>p:not(.pdf-kicker){font:400 1rem/1.75 'Barlow',sans-serif;color:#242719;margin:0 0 1.4rem;max-width:45ch}
+.pdf-button{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.85rem 1rem;border:2px solid #c8f135;background:#c8f135;color:#111!important;border-radius:4px;font:800 .92rem/1.4 'Barlow Condensed',sans-serif;text-decoration:none;text-align:center}
+.pdf-button:hover{background:#fff;border-color:#fff}
+.pdf-button-dark{background:#111;color:#c8f135!important;border-color:#111}
+.pdf-button-dark:hover{background:#282a20;border-color:#282a20}
+.pdf-button:focus-visible,.pdf-browse:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+.pdf-feature .pdf-small,.pdf-article-pick .pdf-small{font:400 .8rem/1.6 'Barlow',sans-serif!important;margin:1rem 0 0!important}
+.pdf-feature-products{display:grid;grid-template-columns:1fr 1fr;gap:1rem;min-width:0}
+.pdf-feature-product{background:#151610;color:#f5f5f0;border:1px solid #10110a;border-radius:7px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pdf-feature-product img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;display:block;background:#eeeae0}
+.pdf-feature-product>div{padding:1.25rem;display:flex;flex:1;flex-direction:column}
+.pdf-feature-product h3{font:800 1.5rem/1.1 'Barlow Condensed',sans-serif;margin:0 0 .65rem;color:#f5f5f0;text-transform:uppercase}
+.pdf-feature-product p{font:400 .9rem/1.6 'Barlow',sans-serif;color:#c3c4b7;margin:0 0 1.25rem}
+.pdf-feature-product .pdf-button{margin-top:auto;width:100%}
+.pdf-article-pick{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:1.75rem;background:#151610;border:2px solid #c8f135;color:#f5f5f0;padding:1.75rem;margin:2.5rem 0 3rem;border-radius:6px}
+.pdf-article-pick>img{display:block;width:100%;height:auto;object-fit:contain;align-self:center;background:#eeeae0}
+.pdf-article-pick h2{font:800 clamp(1.6rem,3vw,2.25rem)/1.1 'Barlow Condensed',sans-serif;color:#f5f5f0;margin:0 0 .85rem;text-transform:uppercase;letter-spacing:normal}
+.pdf-article-pick p:not(.pdf-kicker){font:400 1rem/1.7 'Barlow',sans-serif;color:#c3c4b7;margin:0 0 1rem}
+.pdf-article-pick .pdf-kicker{color:#c8f135}
+.pdf-browse{display:block;width:max-content;max-width:100%;margin:.9rem 0 0;color:#c8f135;font:700 .9rem/1.5 'Barlow Condensed',sans-serif;text-decoration:underline}
+/* Preserve every line of the actual product previews. */
+.tool-image{display:grid;place-items:center;min-height:0!important;background:#eeeae0}
+.tool-image img{object-fit:contain!important;height:auto!important;max-height:100%;transform:none!important}
+.tool-body .btn{width:100%!important;font-size:.9rem;line-height:1.4;text-align:center;min-height:48px;overflow-wrap:anywhere}
+.hero .hero-actions .text-link{color:#c5c5b8;line-height:1.5}
+@media(min-width:1101px){nav{flex-wrap:wrap!important;gap:.65rem!important}.nav-links{flex-wrap:wrap!important;gap:.4rem .75rem!important}.nav-links a{font-size:.65rem!important}}
+@media(max-width:960px){.pdf-feature-inner{grid-template-columns:1fr;gap:2rem}.pdf-feature-copy{max-width:650px}.pdf-feature h2{font-size:clamp(3rem,8vw,5rem)}}
+@media(max-width:600px){.pdf-feature-inner{padding:2.5rem 1.2rem}.pdf-feature-products{grid-template-columns:1fr}.pdf-feature-product{display:grid;grid-template-columns:110px 1fr}.pdf-feature-product img{align-self:start}.pdf-feature-product>div{padding:1rem}.pdf-feature-product h3{font-size:1.2rem}.pdf-feature-product p{font-size:.85rem}.pdf-feature-product .pdf-button{font-size:.85rem;padding:.6rem .5rem}.pdf-article-pick{grid-template-columns:1fr;padding:1.25rem;gap:1.25rem}.pdf-article-pick>img{max-width:190px;margin:auto}.pdf-article-pick .pdf-button{width:100%}.tool-card .tool-image{padding:.5rem}}
+@media(prefers-reduced-motion:reduce){.btn,.tool-card img{transition:none!important;transform:none!important}html{scroll-behavior:auto}}
