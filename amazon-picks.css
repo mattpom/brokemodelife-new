@@ -17,3 +17,9 @@ a.amazon-card:focus-visible,a.amazon-action:focus-visible{outline:3px solid var(
 .product-grid:has(.amazon-card),.gear-grid:has(.amazon-card),.top10-grid:has(.amazon-card){grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))!important;align-items:stretch}
 @media(max-width:600px){.product-grid:has(.amazon-card),.gear-grid:has(.amazon-card),.top10-grid:has(.amazon-card),.product-grid-3:has(.amazon-card),.forgot-grid:has(.amazon-card){grid-template-columns:minmax(0,1fr)!important}.amazon-card{padding:1.25rem!important}.amazon-card .amazon-cta{align-self:stretch}.amazon-disclosure{font-size:.87rem}}
 @media(prefers-reduced-motion:reduce){.amazon-card{transition:none!important;transform:none!important}}
+
+/* Keep the buying action aligned across cards with different copy lengths. */
+a.amazon-card{display:flex!important;flex-direction:column!important}
+.amazon-card .product-desc,.amazon-card .top10-card-desc,.gear-card.amazon-card p{flex:1}
+.amazon-card .amazon-cta{align-self:stretch!important;margin-top:auto!important;width:100%}
+.amazon-card .amazon-cta::after,a.amazon-action::after{content:none!important}
