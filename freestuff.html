@@ -1089,6 +1089,86 @@ body { overflow-x: hidden; max-width: 100vw; }
 </style>
 <style>
 #holiday-freebies{margin-bottom:4rem;scroll-margin-top:6rem;padding-top:.5rem}#holiday-title{font-size:clamp(2.7rem,5vw,4.8rem)}.holiday-scope{color:#bbb;padding:1rem 1.2rem;border-left:3px solid var(--lime);background:#14180f;margin-bottom:1.5rem}.holiday-controls{margin-bottom:1.5rem}.holiday-past{display:flex;gap:.6rem;align-items:center;font-size:.9rem;color:#bbb;min-height:44px}.holiday-past input{width:18px;height:18px;accent-color:var(--lime)}#holiday-count{font-size:.85rem;color:#aaa;margin-top:.5rem}.holiday-card .holiday-date{color:var(--lime);font-weight:600;font-size:.9rem}.holiday-card .holiday-location{font-size:.8rem;color:#ccc}.holiday-card .holiday-expired{color:#ffd38a;font-size:.8rem;border:1px solid #7d622f;padding:.6rem}.holiday-year-round{display:block;padding:1rem 0;color:var(--lime);font-weight:600}#holiday-results{grid-template-columns:repeat(2,minmax(0,1fr))}#holiday-freebies .free-reviewed{margin-bottom:.5rem}@media(max-width:600px){#holiday-results{grid-template-columns:1fr}}
+
+/* Holiday edition: light surfaces and seasonal accents, scoped to this section. */
+#holiday-freebies {
+  --lime: #8f2639;
+  --white: #2d2926;
+  --card-bg: #ffffff;
+  --border: #d8cabc;
+  color: #2d2926;
+  background: #fff7ea;
+  border: 1px solid #dfd0bd;
+  border-radius: 8px;
+  margin-bottom: 4rem;
+  padding: 2.25rem;
+  scroll-margin-top: 6rem;
+}
+#holiday-freebies #holiday-title { color: #8f2639; }
+#holiday-freebies .section-body { color: #514840; }
+#holiday-freebies .section-label { color: #8f2639; }
+#holiday-freebies .holiday-scope {
+  color: #514840;
+  background: #f3e7d6;
+  border-left-color: #8f2639;
+}
+#holiday-freebies .holiday-scope h3 { color: #2d2926; }
+#holiday-freebies .free-filters button {
+  color: #514840;
+  background: #ffffff;
+  border-color: #b9a693;
+  font-weight: 600;
+}
+#holiday-freebies .free-filters button:hover { border-color: #8f2639; color: #8f2639; }
+#holiday-freebies .free-filters button[aria-pressed="true"] {
+  color: #ffffff;
+  background: #8f2639;
+  border-color: #8f2639;
+}
+#holiday-freebies .holiday-past,
+#holiday-freebies #holiday-count,
+#holiday-freebies .free-reviewed { color: #625950; }
+#holiday-freebies .holiday-past input { accent-color: #8f2639; }
+#holiday-freebies .holiday-card { --season-accent: #215943; }
+#holiday-freebies .holiday-card[data-holiday="halloween"] { --season-accent: #a9440b; }
+#holiday-freebies .holiday-card[data-holiday="thanksgiving"] { --season-accent: #8a4724; }
+#holiday-freebies .holiday-card[data-holiday="nye"],
+#holiday-freebies .holiday-card[data-holiday="nyd"] { --season-accent: #7c5900; }
+#holiday-freebies .holiday-card {
+  background: #ffffff;
+  border: 1px solid #d8cabc;
+  border-top: 4px solid var(--season-accent);
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(65,43,26,.06);
+}
+#holiday-freebies .holiday-card:hover { border-color: var(--season-accent); }
+#holiday-freebies .holiday-card h3,
+#holiday-freebies .holiday-card strong { color: #2d2926; }
+#holiday-freebies .holiday-card p { color: #514840; }
+#holiday-freebies .holiday-card .holiday-date { color: var(--season-accent); }
+#holiday-freebies .holiday-card .holiday-location,
+#holiday-freebies .holiday-card .free-terms { color: #625950; }
+#holiday-freebies .holiday-card .free-terms { border-top-color: #e2d8cd; }
+#holiday-freebies .free-badge {
+  color: var(--season-accent);
+  border-color: var(--season-accent);
+  background: #fff7ea;
+  font-weight: 700;
+}
+#holiday-freebies .holiday-card a,
+#holiday-freebies .holiday-year-round { color: #8f2639; }
+#holiday-freebies a:hover { text-decoration: underline; text-underline-offset: 3px; }
+#holiday-freebies .holiday-card .holiday-expired {
+  color: #704500;
+  background: #fff3d8;
+  border-color: #ba8e3e;
+}
+#holiday-freebies .free-empty { border-color: #b9a693; background: #ffffff; }
+#holiday-freebies .free-empty p { color: #625950; }
+#holiday-freebies :is(a,button,input):focus-visible { outline-color: #8f2639; }
+@media (max-width: 600px) {
+  #holiday-freebies { padding: 1.25rem 1rem; }
+}
 </style>
 </head>
 <body>
